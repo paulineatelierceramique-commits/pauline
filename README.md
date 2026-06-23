@@ -1,4 +1,4 @@
-Site vitrine pour Pauline Rebufat, céramiste
+Site vitrine pour Pauline Rebufat, céramiste Pays de Retz
 # Astro Starter Kit: Minimal
 
 ```sh
