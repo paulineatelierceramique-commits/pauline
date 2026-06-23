@@ -1,4 +1,4 @@
-
+Site vitrine pour Pauline, céramiste
 # Astro Starter Kit: Minimal
 
 ```sh
