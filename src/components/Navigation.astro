@@ -6,6 +6,7 @@ interface Props {
 const {
   liens = [
     { label: "Accueil", href: `${import.meta.env.BASE_URL}` },
+    { label: "Boutique", href: "https://pauline-2780.bigcartel.com/", external: true },
     { label: "À propos", href: `${import.meta.env.BASE_URL}apropos` },
     { label: "Contact", href: `${import.meta.env.BASE_URL}contact` }
   ]
@@ -16,7 +17,10 @@ const {
   <div class="elements desktop-links">
     <div class="links">
       {liens.map((lien) => (
-        <a href={lien.href}>{lien.label}</a>
+        <a href={lien.href}
+         target={lien.external ? "_blank" : undefined}
+        rel={lien.external ? "noopener noreferrer" : undefined}
+        >{lien.label}</a>
       ))}
     </div>
   </div>

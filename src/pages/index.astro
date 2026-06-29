@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero2 from '../components/Hero2.astro';
 import Hero from '../components/Hero.astro';
 import HeroLeft from '../components/HeroLeft.astro';
 import BlocTexteImage from '../components/BlocTexteImage.astro';
@@ -17,6 +18,7 @@ import { siteConfig } from '../config/site';
 import monImage from '../images/natacha1.webp';
 import maPhoto from '../images/atelier4.webp';
 import tonImage from '../images/atelier11.webp';
+import imageHero2 from '../images/test.jpg';
 
 
 import natacha3 from '../images/natacha3.webp';
@@ -84,6 +86,21 @@ const mesEtapes = [
     }
   ]} 
 >
+
+    <Hero2
+
+     titre="Pauline céramique"
+    texte={`
+      <p>
+        Découvrez des ateliers de céramique pensés pour apprendre, créer et prendre le temps.
+        Que vous soyez débutant·e ou déjà à l’aise avec la terre, chaque séance vous aide à
+        développer votre geste et votre univers.
+      </p>
+    `}
+    lienLabel="Réserver un atelier"
+    lienHref="/contact"
+    image={imageHero2}
+    />
 
   <Hero
     titre="Nom de l'activité"

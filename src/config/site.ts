@@ -1,14 +1,14 @@
 // src/config/site.ts
 export const siteConfig = {
-  name: "Natacha Boxe Thérapie",
-  url: "https://paulinerebufat.fr.fr",
+  name: "Céramique Pauline Rébufat",
+  url: "https://paulinerebufat.fr",
   tagline: "Céramiste dans le Pays de retz",
   description: "Pauline, céramiste et potière expérimentée. Atelier, cours et exposition dans le Pays de Retz",
   defaultOgImage: "https://www.natacha-boxetherapie.fr/natacha1.jpeg",
   telephone: "+33660828775",
   email: "pauline.rebufat@gmail.com",
   facebook: "https://www.facebook.com/CERAMIQUEPAULINEREBUFAT",
-  themeColor: "#9aa882",
+  themeColor: "#F4F0EB",
   adresse: {
     rue: "",
     ville: "Saint Père en Retz",

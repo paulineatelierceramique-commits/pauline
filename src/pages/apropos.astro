@@ -2,9 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FilAriane from '../components/FilAriane.astro';
 import Hero from '../components/Hero.astro';
-import MembresEquipe from '../components/MembresEquipe.astro';
 import { siteConfig } from '../config/site.ts';
-import Presse from '../components/Presse.astro';
 import Action from '../components/Action.astro';
 
 import monImage from '../images/natacha10.webp';
@@ -91,79 +89,8 @@ Et que chaque émotion mérite d'être entendue, pas enfouie.</p>
     lienHref={`${import.meta.env.BASE_URL}`}
     />
 
-  <MembresEquipe
-      titre="Libérer, Renforcer, Transformer<br><em>Corps, cœur et mental en harmonie</em>"
-  membres={[
-    { nom: "Bienveillance",   icone: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" 
-            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
-            stroke-linejoin="round"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path 
-            d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 
-            1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/>
-            <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>`},
-    { nom: "Écoute", icone: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" 
-          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
-          stroke-linejoin="round" class="lucide lucide-ear-icon lucide-ear"><path 
-          d="M6 8.5a6.5 6.5 0 1 1 13 0c0 6-6 6-6 10a3.5 3.5 0 1 1-7 0"/>
-          <path d="M15 8.5a2.5 2.5 0 0 0-5 0v1a2 2 0 1 1 0 4"/></svg>`},
-    { nom: "Adaptabilité", icone: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" 
-          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
-          stroke-linejoin="round" class="lucide lucide-person-standing-icon lucide-person-standing">
-          <circle cx="12" cy="5" r="1"/><path d="m9 20 3-6 3 6"/><path d="m6 8 6 2 6-2"/><path d="M12 10v4"/></svg>` },
-    { nom: "Respect", icone: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" 
-          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
-          stroke-linejoin="round" class="lucide lucide-hand-heart-icon lucide-hand-heart"><path 
-          d="M11 14h2a2 2 0 0 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16"/>
-          <path d="m14.45 13.39 5.05-4.694C20.196 8 21 6.85 21 5.75a2.75 2.75 0 0 0-4.797-1.837.276.276 0 
-          0 1-.406 0A2.75 2.75 0 0 0 11 5.75c0 1.2.802 2.248 1.5 2.946L16 11.95"/><path d="m2 15 6 6"/>
-          <path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a1 1 0 0 0-2.75-2.91"/></svg>` },
-    { nom: "Énergie", icone: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" 
-          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-           stroke-linejoin="round" class="lucide lucide-battery-full-icon lucide-battery-full"><path 
-           d="M10 10v4"/><path d="M14 10v4"/><path d="M22 14v-4"/><path d="M6 10v4"/><rect x="2" y="6" 
-           width="16" height="12" rx="2"/></svg>` },
-    
+  
 
-  ]} />
-
- 
- 
-  <Presse
-  titre="La presse en parle !"
-  articles={[
-    {
-      image: `${import.meta.env.BASE_URL}presse1.jpeg`,
-      imageAlt: "Article du courrier de l'Ouest du 15 mars 2026 sur Natacha Boxe Thérapie",
-      imageWidth: 220,
-      imageHeight: 510,
-      titre: "Le courrier de l'Ouest",
-      date: "15/03/2026"
-    },
-    {
-      image: `${import.meta.env.BASE_URL}presse2.jpeg`,
-      imageAlt: "Article du courrier de l'Ouest du 9 juillet 2025 sur Natacha Boxe Thérapie",
-      imageWidth: 450,
-      imageHeight: 521,
-      titre: "Le courrier de l'Ouest",
-      date: "9/07/2025"
-    },
-    {
-      image: `${import.meta.env.BASE_URL}presse3.jpeg`,
-      imageAlt: "Article du courrier de l'Ouest du 10 mars 2025 sur Natacha Boxe Thérapie",
-      imageWidth: 450,
-      imageHeight: 629,
-      titre: "Le courrier de l'Ouest",
-      date: "10/03/2025"
-    },
-    {
-      image: `${import.meta.env.BASE_URL}presse4.jpeg`,
-      imageAlt: "Article du courrier de l'Ouest du 5 mars 2025 sur Natacha Boxe Thérapie",
-      imageWidth: 450,
-      imageHeight: 629,
-      titre: "Le courrier de l'Ouest",
-      date: "5/03/2025"
-    }
-  ]}
-/>
 
  <Action />
 
