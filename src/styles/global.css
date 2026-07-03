@@ -4,11 +4,23 @@
 @import '@fontsource/great-vibes';
 
 :root {
-  --color-bg1: #F4F0EB;
+  --color-bg1: #ffffff;
   --color-bg2:#D7D0BE ;
-  --color-text: #403330;;
-  --color-text-inverse: #FDF8F2;
-  --color-button: #AA8259;
+  --color-text-titre:  #5A9EA7;
+  --color-text: #467F87;
+  --color-text-inverse: #ffffff;
+  --color-button: #9C7A24;
+
+   --marble-base: #2C7A7B;
+  --marble-light: #A9D6D2;
+  --marble-mid: #6BAFA9;
+  --marble-dark: #1F5E60;
+
+  --bg-marble:
+    radial-gradient(circle at 20% 30%, rgba(169, 214, 210, 0.35), transparent 35%),
+    radial-gradient(circle at 75% 20%, rgba(107, 175, 169, 0.22), transparent 30%),
+    radial-gradient(circle at 60% 75%, rgba(31, 94, 96, 0.18), transparent 28%),
+    linear-gradient(135deg, var(--marble-base) 0%, #256B6C 45%, var(--marble-dark) 100%);
   
 }
 

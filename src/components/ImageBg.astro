@@ -17,8 +17,8 @@ const {
 ---
 
 <div class="hero-service" style={`--bg: url(${image.src})`}>
-  <div class="text-hero-service">
-    <div class="main-text"><h1>{titre}</h1></div>
+  <div class="text-hero-service" data-aos="zoom-in"  >
+    <div class="main-text"><h2>{titre}</h2></div>
     <div class="secondary-text" set:html={texte} />
     <a href={lienHref} class="bouton-fonce">{lienLabel}</a>
   </div>
@@ -63,7 +63,7 @@ const {
   margin: 0;
   
 }
-.text-hero-service h1 {
+.text-hero-service h2 {
   margin: 0 0 0.5rem 0;
   color: var(--color-text);
 }
@@ -87,7 +87,7 @@ const {
    }
 
 
-  .text-hero-service h1 {
+  .text-hero-service h2 {
     font-size: clamp(2rem, 5vw, 2.625rem);
   }
   .text-hero-service .secondary-text {

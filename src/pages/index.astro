@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Hero2 from '../components/Hero2.astro';
 import Hero from '../components/Hero.astro';
 import HeroLeft from '../components/HeroLeft.astro';
 import BlocTexteImage from '../components/BlocTexteImage.astro';
+import ImageBg from '../components/ImageBg.astro';
 import Etapes from '../components/Etapes.astro';
 import BlocTexte from '../components/BlocTexte.astro';
 import Avis from '../components/Avis.astro';
@@ -86,22 +86,6 @@ const mesEtapes = [
     }
   ]} 
 >
-
-    <Hero2
-
-     titre="Pauline céramique"
-    texte={`
-      <p>
-        Découvrez des ateliers de céramique pensés pour apprendre, créer et prendre le temps.
-        Que vous soyez débutant·e ou déjà à l’aise avec la terre, chaque séance vous aide à
-        développer votre geste et votre univers.
-      </p>
-    `}
-    lienLabel="Réserver un atelier"
-    lienHref="/contact"
-    image={imageHero2}
-    />
-
   <Hero
     titre="Nom de l'activité"
     texte="<p><strong>ici le slogan principal</strong></p>
@@ -158,6 +142,21 @@ const mesEtapes = [
   lienLabel="En savoir plus"
   lienHref={`${import.meta.env.BASE_URL}apropos`}
 />
+
+<ImageBg
+
+     titre="Pauline céramique"
+    texte={`
+      <p>
+        Découvrez des ateliers de céramique pensés pour apprendre, créer et prendre le temps.
+        Que vous soyez débutant·e ou déjà à l’aise avec la terre, chaque séance vous aide à
+        développer votre geste et votre univers.
+      </p>
+    `}
+    lienLabel="Réserver un atelier"
+    lienHref="/contact"
+    image={imageHero2}
+    />
 
 <Etapes
   titre="Comment se déroule l’accompagnement ?"
