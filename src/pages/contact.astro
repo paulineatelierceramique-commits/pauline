@@ -5,7 +5,7 @@ import Hero from '../components/Hero.astro';
 import Formulaire from '../components/Formulaire.astro';
 import Zone from '../components/Zone.astro';
 import { siteConfig } from '../config/site.ts';
-import monImage from '../images/gants.webp';
+import monImage from '../images/mains.webp';
 import carteZone from '../images/zone.webp';
 
 const base = import.meta.env.BASE_URL;
@@ -28,11 +28,11 @@ const schema = [
 ---
 
 <BaseLayout
-  title="Contacter Natacha - Boxe thérapeute à Saumur"
-  description="Contactez Natacha, boxe thérapeute à Saumur. Par téléphone, email ou formulaire. Réponse rapide à chaque message."
+  title="Contacter Pauline Rébufat"
+  description="Contactez Pauline Rébufat, céramiste dans le pays de Retz. Par téléphone, email ou formulaire. Réponse rapide à chaque message."
   canonical={`${siteConfig.url}contact`}
   ogTitle={`Contacter ${siteConfig.name}`}
-  ogDescription={`Contactez ${siteConfig.name} pour toute question sur la boxe thérapie.`}
+  ogDescription={`Contactez ${siteConfig.name} pour toute question sur Pauline Rébufat Créations Céramiques.`}
   schema={schema}
 >
   <FilAriane items={[
@@ -42,38 +42,38 @@ const schema = [
   
   <Hero 
      titre="Infos pratiques et contact"
-    texte={`<h2>Une question, un projet, envie d'en savoir plus ?</h2>
-    <p>Écris-moi ou appelle-moi directement. Je réponds à chaque message avec attention.<br>
-    📞  06 84 55 69 02 <br>
-    📧  <a href="mailto:nat.boxetherapie@gmail.com">nat.boxetherapie@gmail.com</a> </p>
+    texte={`<h2>Une question, ou l'envie d'en savoir plus ?</h2>
+    <p>Écrivez-moi ou appellez-moi directement. Je réponds à chaque message avec attention.<br>
+    📞  06 60 82 87 75<br>
+    📧  <a href="mailto:pauline.rebufat@gmail.com">pauline.rebufat@gmail.com</a> </p>
     <div class="reseaux">
-  <a href="https://www.instagram.com/natacha.boxetherapie" target="_blank" rel="noopener">
+  <a href="https://www.instagram.com/lesceramiquesdepauline/" target="_blank" rel="noopener">
     <img src="__BASE__icons/instagram.svg" alt="Instagram" width="22" height="22" />
-    natacha.boxetherapie
+    Les céramiques de Pauline
   </a> <br>
-  <a href="https://www.facebook.com/profile.php?id=61561327531815" target="_blank" rel="noopener">
+  <a href="https://www.facebook.com/CERAMIQUEPAULINEREBUFAT" target="_blank" rel="noopener">
     <img src="__BASE__icons/facebook.svg" alt="Facebook" width="22" height="22" />
-    natacha.boxetherapie
+    Les Céramiques de Pauline
   </a>
 </div>
     `}
     image={monImage}
     imageAlt="image de Natacha, boxe thérapeute à saumur"
-    lienLabel="Découvrez la boxe thérapie"
+    lienLabel="Découvrez les céramiques de Pauline"
     lienHref={`${import.meta.env.BASE_URL}`}
   />
     
 
   <Formulaire
-    action="/traitement-natacha"
+    action="/traitement-pauline"
     placeholderMessage="Bonjour ! Décrivez ici votre demande..."
   />
 
   <Zone 
       titre="Ma zone d'intervention"
       image={carteZone}
-      imageAlt="carte de la zone d'intervention de Natacha Boxe thérapie à Saumur"
-      carteUrl="https://share.google/MIFRXhOpA1wNrpwJp"
+      imageAlt="carte de la zone d'intervention de Pauline Rébufat Créations céramiques"
+      carteUrl="https://share.google/vCSvH5Q5oZ9kX3qUF"
   />
 
 </BaseLayout>

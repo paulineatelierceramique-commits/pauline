@@ -5,7 +5,7 @@ import Hero from '../components/Hero.astro';
 import { siteConfig } from '../config/site.ts';
 import Action from '../components/Action.astro';
 
-import monImage from '../images/natacha10.webp';
+import monImage from '../images/aproposnb.webp';
 
 
 
@@ -27,17 +27,17 @@ const schema = [
 ---
 
 <BaseLayout
-  title="A propos de Natacha, boxe thérapeute à Saumur"
-  description="Coach, boxeuse, thérapeute certifiée. Découvrez le parcours de Natacha et sa vision de la boxe thérapie à Saumur et dans un rayon de 20km."
+  title="A propos de Pauline Rébut Créations Céramiques"
+  description="Céramiste. Découvrez le parcours de Pauline et son travail dans le Pays de Retz et dans un rayon de 20km."
   canonical={`${siteConfig.url}/apropos`}
-  ogTitle="À propos de Natacha, boxe thérapeute à Saumur"
-  ogDescription="Éducatrice, boxeuse, thérapeute certifiée. Découvrez le parcours de Natacha et sa vision de la boxe thérapie à Saumur et dans un rayon de 20 km."
+  ogTitle="À propos de Pauline Rébufat"
+  ogDescription="Céramiste potière. Découvrez le parcours de Pauline à compléter."
   schema={[
     {
       "@context": "https://schema.org",
       "@type": "AboutPage",
       "url": `${siteConfig.url}apropos`,
-      "name": "À propos de Natacha Boxe Thérapie"
+      "name": "À propos de Pauline Rébufat, céramiste"
     },
     {
       "@context": "https://schema.org",
@@ -56,7 +56,7 @@ const schema = [
   ]} />
 
   <Hero 
-    titre="Natacha : Éducatrice, Boxeuse et Boxe Thérapeute"
+    titre="Pauline rébufat"
     texte={`<p>J'ai poussé la porte d'une salle de boxe à 14 ans. Sans vraiment le savoir, ce jour-là, j'ai découvert bien plus qu'un sport. J'ai trouvé un endroit où ressentir mon <strong>corps comme une force, où me dépasser et être moi</strong>. J'ai pratiqué la boxe pendant des années, jusqu'au niveau semi-professionnel, et cette passion ne m'a plus jamais quittée.</p>
 
     <p>En parallèle, la vie m'a menée vers un autre chemin, celui de l'humain.</p>
@@ -84,8 +84,8 @@ Et que chaque émotion mérite d'être entendue, pas enfouie.</p>
 <p>Que tu traverses une période difficile, que tu cherches à te reconnecter à toi-même, ou que tu aies simplement une <strong>furieuse envie d'aller mieux</strong> :  tu es exactement à ta place ici.</p>
 `}
     image={monImage}
-    imageAlt="photo de Natacha, boxe thérapeute à Saumur"
-    lienLabel="Découvrez la boxe thérapie"
+    imageAlt="photo de Pauline en train de travailler la terre"
+    lienLabel="Découvrez mes créations"
     lienHref={`${import.meta.env.BASE_URL}`}
     />
 
