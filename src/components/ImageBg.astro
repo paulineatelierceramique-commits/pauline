@@ -32,6 +32,7 @@ const {
   background-size: cover;        /* ← étire l'image pour couvrir tout le div */
   background-position: center;   /* ← centre l'image */
   background-repeat: no-repeat;  /* ← empêche la répétition */
+  background-attachment:scroll;
   width: 100%;  /*100vw; pleine largeur*/
   min-height: calc(100vh - 80px);
   min-height: calc(100svh - 80px);
@@ -49,7 +50,7 @@ const {
   inset: 0;                      /* top/right/bottom/left: 0 shorthand */
   background: rgba(255, 255, 255, 0.6);
   z-index: 1;
-}
+} 
 
 
 .text-hero-service {
@@ -84,9 +85,13 @@ const {
     padding: 1.5rem 5%;
     min-height: 100vh;
     min-height: 100svh; 
-   }
+   } }
 
-
+@media (min-width: 1024px) {
+  .hero-service {
+    background-attachment: fixed;
+  }
+  
   .text-hero-service h2 {
     font-size: clamp(2rem, 5vw, 2.625rem);
   }

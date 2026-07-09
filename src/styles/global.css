@@ -40,13 +40,19 @@ html, body {
   overflow-x: hidden;
 }
 
+@font-face {
+  font-family: 'Tomatoes';
+  src: url('./public/fonts/Tomatoes.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
 
 h1 {
-  font-family: 'Great Vibes', cursive;
+  font-family: 'Tomatoes', cursive;
   font-weight: 400; /* Great Vibes n'a que le 400 */
   margin: 0;
-  line-height: 1.2;
-  font-size: 72px; /* augmente ici — essaie 64px, 72px ou 80px */
+  line-height: 1.5;
+  font-size: 70px; /* augmente ici — essaie 64px, 72px ou 80px */
 }
 
 h2 {

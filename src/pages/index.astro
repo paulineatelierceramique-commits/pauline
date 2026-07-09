@@ -100,6 +100,21 @@ const mesEtapes = [
     lienHref={`${import.meta.env.BASE_URL}contact`}
   />
 
+<ImageBg
+
+     titre="Pauline céramique"
+    texte={`
+      <p>
+        Découvrez des ateliers de céramique pensés pour apprendre, créer et prendre le temps.
+        Que vous soyez débutant·e ou déjà à l’aise avec la terre, chaque séance vous aide à
+        développer votre geste et votre univers.
+      </p>
+    `}
+    lienLabel="Réserver un atelier"
+    lienHref="/contact"
+    image={imageHero2}
+    />
+
   <HeroLeft
   titre="Présenter votre approche"
   texte={`
@@ -122,26 +137,7 @@ const mesEtapes = [
   imageAlt="image de démonstration"
 />
   
-<BlocTexteImage
-  titre="À qui s’adresse votre accompagnement ?"
-  texte="<h3>Un premier profil de client</h3>
-      <p>Présente ici un type de public que tu accompagnes, avec ses besoins, ses attentes et ce que ton activité peut lui apporter.</p>
 
-      <h3>Un second profil de client</h3>
-      <p>Tu peux aussi utiliser cette section pour montrer que ton offre s’adapte à différentes situations, avec une approche personnalisée et progressive.</p>"
-  image={maPhoto}
-  imageAlt="Image de démonstration"
-/>
-
-<BlocTexteImage
-  texte="<h3>Une autre utilisation de ton offre</h3>
-      <p>Cette zone peut servir à présenter un autre public, un autre service ou un autre contexte d’intervention, par exemple en entreprise, en atelier ou en accompagnement spécifique.</p>
-
-      <h3>Un accompagnement adaptable</h3>
-      <p>Tu peux montrer ici que ton approche s’ajuste aux besoins, au rythme et au cadre de chaque personne ou structure accompagnée.</p>"
-  lienLabel="En savoir plus"
-  lienHref={`${import.meta.env.BASE_URL}apropos`}
-/>
 
 <ImageBg
 
@@ -158,13 +154,6 @@ const mesEtapes = [
     image={imageHero2}
     />
 
-<Etapes
-  titre="Comment se déroule l’accompagnement ?"
-  intro="Chaque projet commence par un premier échange pour comprendre vos besoins, vos objectifs et le contexte de votre activité.<br>
-  Cette section de démonstration permet de présenter les grandes étapes d’un accompagnement, de façon simple et lisible.<br>
-  Le contenu sera ensuite adapté à chaque projet client."
-  etapes={mesEtapes}
-/>
 
 
   <Avis
@@ -187,20 +176,6 @@ const mesEtapes = [
   />
 
 
-  <BlocTexte 
-       titre="Mes tarifs"
-  description=" <h3>Séance individuelle : prix en €</h3>
-    
-    <p>Un <strong>accompagnement personnalisé</strong> pour <strong>libérer les tensions, te reconnecter à toi-même et avancer selon tes envies.</strong> <br>
-    Chaque séance s'adapte à tes besoins, dans le respect de ton corps, de tes émotions et de ton histoire.</p>
-    <h3>Ateliers collectifs, associations et entreprises</h3>
-    <strong>Tarif sur devis</strong>
-    <p>J'interviens auprès de différents publics — adolescents, adultes, structures médico-sociales, entreprises — avec des <strong>séances adaptées</strong> aux objectifs et aux besoins de chacun. </p>
-"
-  boutonTexte="Parlons de ton projet"
-  boutonLien={`${import.meta.env.BASE_URL}contact`}
-  
-/>
   <Presse 
     titre="Galerie de céramique"
   articles={[
@@ -241,12 +216,6 @@ const mesEtapes = [
 
 
 
-  <Slider
-    slides={realisations}
-    title="Galerie de démonstration"
-    subtitle="Cette section permet de mettre en valeur des images, des réalisations ou l’univers visuel d’une activité."
-    instagramUrl="https://www.instagram.com/natacha.boxetherapie"
-  />
     
   <QuestionsFrequentes
   questions={[

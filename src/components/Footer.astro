@@ -1,6 +1,7 @@
 ---
 import logo from '../images/logo.webp';
 import { siteConfig } from '../config/site.ts';
+import footerBg from '../images/footerBg.webp';
 
 interface Props {
   liens?: { label: string; href: string }[];
@@ -27,7 +28,7 @@ const {
 const year = new Date().getFullYear();
 ---
 
-<footer>
+<footer style={`--footerBg: url('${footerBg.src}')`}>
 
 
 
@@ -70,8 +71,11 @@ const year = new Date().getFullYear();
 
 <style>
 footer {
-  background: var(--color-text); 
-  color: var(--color-bg1);
+  background-image: var(--footerBg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--color-text);
   text-align: center;
   padding: 20px;
   display: flex;
