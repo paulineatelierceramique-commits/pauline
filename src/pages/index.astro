@@ -7,18 +7,17 @@ import ImageBg from '../components/ImageBg.astro';
 import Etapes from '../components/Etapes.astro';
 import BlocTexte from '../components/BlocTexte.astro';
 import Avis from '../components/Avis.astro';
-import Presse from '../components/Presse.astro';
-import Slider from '../components/Slider.astro';
+import Galerie from '../components/Galerie.astro';
 import QuestionsFrequentes from '../components/QuestionsFrequentes.astro';
 import Action from '../components/Action.astro';
 
 import { siteConfig } from '../config/site';
 
 
-import monImage from '../images/IMG_8880.webp';
+import monImage from '../images/IMG_8910.webp';
 import maPhoto from '../images/atelier4.webp';
-import tonImage from '../images/atelier11.webp';
-import imageHero2 from '../images/test.jpg';
+import tonImage from '../images/IMG_8880.webp';
+import imageHero2 from '../images/fond1.webp';
 
 
 import natacha3 from '../images/natacha3.webp';
@@ -35,7 +34,173 @@ import atelier9 from '../images/atelier9.webp';
 import atelier10 from '../images/atelier10.webp';
 import atelier8 from '../images/atelier8.webp';
 
+import creation1 from '../images/creation1.webp';
+import creation2 from '../images/creation2.webp';
+import creation3 from '../images/creation3.webp';
+import creation4 from '../images/creation4.webp';
+import creation5 from '../images/creation5.webp';
+import creation6 from '../images/creation6.webp';
+import creation7 from '../images/creation7.webp';
+import creation8 from '../images/creation8.webp';
+import creation9 from '../images/creation9.webp';
+import creation10 from '../images/creation10.webp';
+import creation11 from '../images/creation11.webp';
+import creation12 from '../images/creation12.webp';
+import creation13 from '../images/creation13.webp';
+import creation14 from '../images/creation14.webp';
+import creation15 from '../images/creation15.webp';
+import creation16 from '../images/creation16.webp';
+import creation17 from '../images/creation17.webp';
+import creation18 from '../images/creation18.webp';
+import creation19 from '../images/creation19.webp';
+import creation20 from '../images/creation20.webp';
 
+
+
+
+
+const creations = [
+  {
+    image: creation1.src,
+    imageAlt: "Vase en céramique émaillé aux tons naturels",
+    imageWidth: creation1.width,
+    imageHeight: creation1.height,
+    titre: "Vase émaillé"
+  },
+  {
+    image: creation2.src,
+    imageAlt: "Tasse en céramique façonnée à la main",
+    imageWidth: creation2.width,
+    imageHeight: creation2.height,
+    titre: "Tasse artisanale"
+  },
+  {
+    image: creation3.src,
+    imageAlt: "Assiette en céramique au décor sobre",
+    imageWidth: creation3.width,
+    imageHeight: creation3.height,
+    titre: "Assiette décorative"
+  },
+  {
+    image: creation4.src,
+    imageAlt: "Ensemble de créations en céramique dans l'atelier",
+    imageWidth: creation4.width,
+    imageHeight: creation4.height,
+    titre: "Collection atelier"
+  },
+  {
+    image: creation5.src,
+    imageAlt: "Ensemble de créations en céramique dans l'atelier",
+    imageWidth: creation4.width,
+    imageHeight: creation4.height,
+    titre: "Collection atelier"
+  },
+  {
+    image: creation6.src,
+    imageAlt: "Ensemble de créations en céramique dans l'atelier",
+    imageWidth: creation4.width,
+    imageHeight: creation4.height,
+    titre: "Collection atelier"
+  },
+  {
+    image: creation7.src,
+    imageAlt: "Ensemble de créations en céramique dans l'atelier",
+    imageWidth: creation4.width,
+    imageHeight: creation4.height,
+    titre: "Collection atelier"
+  },
+  {
+    image: creation8.src,
+    imageAlt: "Ensemble de créations en céramique dans l'atelier",
+    imageWidth: creation4.width,
+    imageHeight: creation4.height,
+    titre: "Collection atelier"
+  },
+  {
+    image: creation9.src,
+    imageAlt: "Ensemble de créations en céramique dans l'atelier",
+    imageWidth: creation4.width,
+    imageHeight: creation4.height,
+    titre: "Collection atelier"
+  },
+  {
+    image: creation10.src,
+    imageAlt: "Ensemble de créations en céramique dans l'atelier",
+    imageWidth: creation4.width,
+    imageHeight: creation4.height,
+    titre: "Collection atelier"
+  },
+  {
+    image: creation11.src,
+    imageAlt: "Ensemble de créations en céramique dans l'atelier",
+    imageWidth: creation4.width,
+    imageHeight: creation4.height,
+    titre: "Collection atelier"
+  },
+  {
+    image: creation12.src,
+    imageAlt: "Ensemble de créations en céramique dans l'atelier",
+    imageWidth: creation4.width,
+    imageHeight: creation4.height,
+    titre: "Collection atelier"
+  },
+  {
+    image: creation13.src,
+    imageAlt: "Ensemble de créations en céramique dans l'atelier",
+    imageWidth: creation4.width,
+    imageHeight: creation4.height,
+    titre: "Collection atelier"
+  },
+  {
+    image: creation14.src,
+    imageAlt: "Ensemble de créations en céramique dans l'atelier",
+    imageWidth: creation4.width,
+    imageHeight: creation4.height,
+    titre: "Collection atelier"
+  },
+  {
+    image: creation15.src,
+    imageAlt: "Ensemble de créations en céramique dans l'atelier",
+    imageWidth: creation4.width,
+    imageHeight: creation4.height,
+    titre: "Collection atelier"
+  },
+  {
+    image: creation16.src,
+    imageAlt: "Ensemble de créations en céramique dans l'atelier",
+    imageWidth: creation4.width,
+    imageHeight: creation4.height,
+    titre: "Collection atelier"
+  },
+  {
+    image: creation17.src,
+    imageAlt: "Ensemble de créations en céramique dans l'atelier",
+    imageWidth: creation4.width,
+    imageHeight: creation4.height,
+    titre: "Collection atelier"
+  },
+  {
+    image: creation18.src,
+    imageAlt: "Ensemble de créations en céramique dans l'atelier",
+    imageWidth: creation4.width,
+    imageHeight: creation4.height,
+    titre: "Collection atelier"
+  },
+  {
+    image: creation19.src,
+    imageAlt: "Ensemble de créations en céramique dans l'atelier",
+    imageWidth: creation4.width,
+    imageHeight: creation4.height,
+    titre: "Collection atelier"
+  },
+  {
+    image: creation20.src,
+    imageAlt: "Ensemble de créations en céramique dans l'atelier",
+    imageWidth: creation4.width,
+    imageHeight: creation4.height,
+    titre: "Collection atelier"
+  }
+];
 
 
 const realisations = [
@@ -72,17 +237,17 @@ const mesEtapes = [
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "name": "Natacha Boxe Thérapie",
-      "url": "https://natacha-boxetherapie.fr",
-      "telephone": "+33684556902",
+      "name": "Pauline Rébufat Créations Céramiques",
+      "url": "https://paulinerebufat.fr",
+      "telephone": "+33660828775",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Saumur",
+        "addressLocality": "Saint Père en Retz",
         "addressRegion": "Pays de la Loire",
         "addressCountry": "FR"
       },
       "description": siteConfig.description,
-      "areaServed": "Saumur et rayon de 20km"
+      "areaServed": "Pays de Retz et rayon de 20km"
     }
   ]} 
 >
@@ -102,18 +267,18 @@ const mesEtapes = [
 
 <ImageBg
 
-     titre="Pauline céramique"
-    texte={`
+    titre="Pauline céramique"
+    lienLabel="Réserver un atelier"
+    lienHref="/contact"
+    image={imageHero2}
+    >
       <p>
         Découvrez des ateliers de céramique pensés pour apprendre, créer et prendre le temps.
         Que vous soyez débutant·e ou déjà à l’aise avec la terre, chaque séance vous aide à
         développer votre geste et votre univers.
       </p>
-    `}
-    lienLabel="Réserver un atelier"
-    lienHref="/contact"
-    image={imageHero2}
-    />
+  </ImageBg>
+
 
   <HeroLeft
   titre="Présenter votre approche"
@@ -138,21 +303,21 @@ const mesEtapes = [
 />
   
 
-
 <ImageBg
 
-     titre="Pauline céramique"
-    texte={`
+    titre="Pauline céramique"
+    lienLabel="Réserver un atelier"
+    lienHref="/contact"
+    image={imageHero2}
+    >
       <p>
         Découvrez des ateliers de céramique pensés pour apprendre, créer et prendre le temps.
         Que vous soyez débutant·e ou déjà à l’aise avec la terre, chaque séance vous aide à
         développer votre geste et votre univers.
       </p>
-    `}
-    lienLabel="Réserver un atelier"
-    lienHref="/contact"
-    image={imageHero2}
-    />
+  </ImageBg>
+
+
 
 
 
@@ -175,43 +340,10 @@ const mesEtapes = [
   ]}
   />
 
-
-  <Presse 
-    titre="Galerie de céramique"
-  articles={[
-    {
-      image: `${import.meta.env.BASE_URL}presse1.jpeg`,
-      imageAlt: "Article du courrier de l'Ouest du 15 mars 2026 sur Natacha Boxe Thérapie",
-      imageWidth: 220,
-      imageHeight: 510,
-      titre: "Le courrier de l'Ouest",
-      date: "15/03/2026"
-    },
-    {
-      image: `${import.meta.env.BASE_URL}presse2.jpeg`,
-      imageAlt: "Article du courrier de l'Ouest du 9 juillet 2025 sur Natacha Boxe Thérapie",
-      imageWidth: 450,
-      imageHeight: 521,
-      titre: "Le courrier de l'Ouest",
-      date: "9/07/2025"
-    },
-    {
-      image: `${import.meta.env.BASE_URL}presse3.jpeg`,
-      imageAlt: "Article du courrier de l'Ouest du 10 mars 2025 sur Natacha Boxe Thérapie",
-      imageWidth: 450,
-      imageHeight: 629,
-      titre: "Le courrier de l'Ouest",
-      date: "10/03/2025"
-    },
-    {
-      image: `${import.meta.env.BASE_URL}presse4.jpeg`,
-      imageAlt: "Article du courrier de l'Ouest du 5 mars 2025 sur Natacha Boxe Thérapie",
-      imageWidth: 450,
-      imageHeight: 629,
-      titre: "Le courrier de l'Ouest",
-      date: "5/03/2025"
-    }
-  ]}
+  <Galerie
+     titre="Les créations de Pauline"
+  intro="Un aperçu de pièces façonnées à la main, entre gestes artisanaux, matières brutes et détails sensibles."
+  creations={creations}
   />
 
 
