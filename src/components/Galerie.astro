@@ -4,7 +4,7 @@ interface Creation {
   imageAlt: string;
   imageWidth: number;
   imageHeight: number;
-  titre?: string;
+  legende?: string;
 }
 
 interface Props {
@@ -46,14 +46,21 @@ const {
             />
           </button>
 
-          {creation.titre && <figcaption>{creation.titre}</figcaption>}
+          {creation.legende && <figcaption>{creation.legende}</figcaption>}
         </figure>
       ))}
     </div>
   </div>
 </section>
 
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Agrandissement de l'image">
+<div
+  class="lightbox"
+  id="lightbox"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="lightbox-title"
+>
+  <h3 id="lightbox-title" class="sr-only">Image agrandie</h3>
   <button class="lightbox-close" id="lightbox-close" aria-label="Fermer">&#x2715;</button>
   <img id="lightbox-img" src="" alt="" />
   <span class="lightbox-hint">Clic ou Échap pour fermer</span>
@@ -63,12 +70,16 @@ const {
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const closeBtn = document.getElementById('lightbox-close');
+  let lastTrigger = null;
 
-  function openLightbox(src, alt) {
-    if (!lightbox || !lightboxImg) return;
+  function openLightbox(src, alt, trigger) {
+    if (!lightbox || !lightboxImg || !closeBtn) return;
     lightboxImg.src = src;
     lightboxImg.alt = alt;
     lightbox.classList.add('open');
+    lastTrigger = trigger;
+    closeBtn.focus();
+    document.body.style.overflow = 'hidden';
   }
 
   function closeLightbox() {
@@ -76,6 +87,8 @@ const {
     lightbox.classList.remove('open');
     lightboxImg.src = '';
     lightboxImg.alt = '';
+    document.body.style.overflow = '';
+    if (lastTrigger instanceof HTMLElement) lastTrigger.focus();
   }
 
   document.addEventListener('click', (event) => {
@@ -85,7 +98,7 @@ const {
     if (button) {
       const src = button.getAttribute('data-image');
       const alt = button.getAttribute('data-alt') || '';
-      if (src) openLightbox(src, alt);
+      if (src) openLightbox(src, alt, button);
       return;
     }
 
@@ -150,6 +163,7 @@ const {
   border: none;
   background: none;
   cursor: zoom-in;
+ 
 }
 
 .galerie-button img {

@@ -155,3 +155,66 @@ h2 {
   font-size: 28px;
   text-align: center;
 }
+:root {
+  --cursor-dot-size: 14px;
+  --cursor-dot-color: var(--color-button);
+  --cursor-dot-color-hover: color-mix(in oklch, var(--color-button) 82%, white);
+  --cursor-dot-shadow: 0 0 0 1px color-mix(in oklch, var(--color-button) 18%, transparent);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html.has-custom-cursor,
+  html.has-custom-cursor * {
+    cursor: none !important;
+  }
+
+  .cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--cursor-dot-size);
+    height: var(--cursor-dot-size);
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    background: var(--cursor-dot-color);
+    border-radius: 63% 37% 54% 46% / 46% 61% 39% 54%;
+    transform: translate(-50%, -50%);
+    transition:
+      opacity 0.2s ease,
+      transform 0.12s ease,
+      background-color 0.2s ease;
+    box-shadow: var(--cursor-dot-shadow);
+  }
+
+  .cursor-dot.is-visible {
+    opacity: 1;
+  }
+
+  .cursor-dot.is-hover {
+    transform: translate(-50%, -50%) scale(1.35);
+    background: var(--cursor-dot-color-hover);
+  }
+
+  .cursor-dot.is-pressed {
+    transform: translate(-50%, -50%) scale(0.92);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-dot {
+    display: none !important;
+  }
+}
+
+a,
+button,
+.bouton-clair,
+.bouton-fonce {
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}

@@ -54,6 +54,23 @@ header {
   padding-right: 20rem;
   padding-bottom: 0.5rem;
 }
+
+header::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-bg2),
+    transparent
+  );
+}
+
 .header-logo {
   display: flex;
   padding: 1rem 15rem;

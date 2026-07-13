@@ -7,6 +7,7 @@ import Zone from '../components/Zone.astro';
 import { siteConfig } from '../config/site.ts';
 import monImage from '../images/mains.webp';
 import carteZone from '../images/zone.webp';
+import backgroundImage from '../images/fond1.webp';
 
 const base = import.meta.env.BASE_URL;
 
@@ -67,6 +68,7 @@ const schema = [
   <Formulaire
     action="/traitement-pauline"
     placeholderMessage="Bonjour ! Décrivez ici votre demande..."
+    backgroundImage={backgroundImage.src}
   />
 
   <Zone 

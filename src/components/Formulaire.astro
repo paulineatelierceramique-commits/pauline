@@ -1,87 +1,115 @@
 ---
 const { 
   titre = "Formulaire de contact",
-  placeholderMessage = "Bonjour ! Décrivez ici votre demande..."
+  placeholderMessage = "Bonjour ! Décrivez ici votre demande...",
+  backgroundImage = "/images/fond1.webp"
 } = Astro.props;
 ---
 
-<section class="section-formulaire">
-  <h2>{titre}</h2>
-  <form action="https://api.web3forms.com/submit" method="POST" data-aos="fade-up" id="formulaire-contact">
-    
-    <!-- Clé API Web3Forms -->
-    <input type="hidden" name="access_key" value="a4dd15ab-f21b-47ea-bfce-3eaa565f9ca9" />
-    
-    <!-- Sujet de l'email reçu -->
-    <input type="hidden" name="subject" value="Nouveau message depuis le site Natacha Boxe Thérapie" />
+<section class="section-formulaire" style={`--form-bg-image: url('${backgroundImage}')`}>
+  <div class="formulaire-inner">
+    <h2>{titre}</h2>
 
-    <!-- Honeypot anti-spam (invisible pour les humains) -->
-    <input type="checkbox" name="botcheck" style="display:none;" />
+    <form action="https://api.web3forms.com/submit" method="POST" data-aos="fade-up" id="formulaire-contact">
+      <input type="hidden" name="access_key" value="a4dd15ab-f21b-47ea-bfce-3eaa565f9ca9" />
+      <input type="hidden" name="subject" value="Nouveau message depuis le site Natacha Boxe Thérapie" />
+      <input type="checkbox" name="botcheck" style="display:none;" />
 
-    <ul>
-      <li class="ligne-double">
-        <div class="champ">
-          <label for="name">Nom&nbsp;:</label>
-          <input type="text" id="name" name="name" required placeholder="Martin" autocomplete="family-name" />
-        </div>
-        <div class="champ">
-          <label for="prenom">Prénom&nbsp;:</label>
-          <input type="text" id="prenom" name="prenom" required placeholder="Julie" autocomplete="given-name" />
-        </div>
-      </li>
-      <li class="ligne-double">
-        <div class="champ">
-          <label for="mail">E-mail&nbsp;:</label>
-          <input type="email" id="mail" name="email" required placeholder="exemple@email.com" autocomplete="email" />
-        </div>
-        <div class="champ">
-          <label for="tel">Téléphone&nbsp;:</label>
-          <input type="tel" id="tel" name="telephone" placeholder="06 12 43 66 31" autocomplete="tel" />
-        </div>
-      </li>
-      <li>
-        <label for="msg">Message&nbsp;:</label>
-        <textarea id="msg" name="message" required placeholder={placeholderMessage}></textarea>
-      </li>
-      <li class="consentement">
-        <input type="checkbox" id="consent" name="consent" required />
-        <label for="consent">En cochant cette case, j'accepte d'être recontacté(e).</label>
-      </li>
-    </ul>
+      <ul>
+        <li class="ligne-double">
+          <div class="champ">
+            <label for="name">Nom&nbsp;:</label>
+            <input type="text" id="name" name="name" required placeholder="Martin" autocomplete="family-name" />
+          </div>
+          <div class="champ">
+            <label for="prenom">Prénom&nbsp;:</label>
+            <input type="text" id="prenom" name="prenom" required placeholder="Julie" autocomplete="given-name" />
+          </div>
+        </li>
 
-    <button type="submit" class="bouton-fonce">Envoyer le message</button>
+        <li class="ligne-double">
+          <div class="champ">
+            <label for="mail">E-mail&nbsp;:</label>
+            <input type="email" id="mail" name="email" required placeholder="exemple@email.com" autocomplete="email" />
+          </div>
+          <div class="champ">
+            <label for="tel">Téléphone&nbsp;:</label>
+            <input type="tel" id="tel" name="telephone" placeholder="06 12 43 66 31" autocomplete="tel" />
+          </div>
+        </li>
 
-    <!-- Messages de retour -->
-    <p class="form-success" id="form-success" aria-live="polite">
-      ✅ Message envoyé ! Natacha vous répondra dans les plus brefs délais.
-    </p>
-    <p class="form-error" id="form-error" aria-live="polite">
-      ❌ Une erreur est survenue. Merci de réessayer ou de nous contacter directement par téléphone.
-    </p>
+        <li>
+          <label for="msg">Message&nbsp;:</label>
+          <textarea id="msg" name="message" required placeholder={placeholderMessage}></textarea>
+        </li>
 
-  </form>
+        <li class="consentement">
+          <input type="checkbox" id="consent" name="consent" required />
+          <label for="consent">En cochant cette case, j'accepte d'être recontacté(e).</label>
+        </li>
+      </ul>
+
+      <button type="submit" class="bouton-fonce">Envoyer le message</button>
+
+      <p class="form-success" id="form-success" aria-live="polite">
+        ✅ Message envoyé ! Natacha vous répondra dans les plus brefs délais.
+      </p>
+
+      <p class="form-error" id="form-error" aria-live="polite">
+        ❌ Une erreur est survenue. Merci de réessayer ou de nous contacter directement par téléphone.
+      </p>
+    </form>
+  </div>
 </section>
 
 <style>
   .section-formulaire {
-    background-color: var(--color-bg1);
-    padding: 2rem;
+    position: relative;
+    padding: clamp(3rem, 6vw, 5rem) 1.5rem;
+    background-image: var(--form-bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    isolation: isolate;
+  }
+
+  .section-formulaire::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.38),
+      rgba(255, 255, 255, 0.24)
+    );
+    z-index: 0;
+  }
+
+  .formulaire-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 0 auto;
   }
 
   .section-formulaire h2 {
-    margin-top: 0;
+    margin: 0 0 1.5rem 0;
     padding-top: 0;
+    color: var(--color-text);
   }
 
   form {
-    margin: 2rem auto;
+    margin: 0 auto;
     max-width: 600px;
     width: 100%;
-    padding: 1.5em;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background: var(--bg-marble);
-    color: var(--color-text-inverse)
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.60);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    color: var(--color-text);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   }
 
   ul {
@@ -91,7 +119,7 @@ const {
   }
 
   form li + li {
-    margin-top: 1em;
+    margin-top: 1rem;
   }
 
   .ligne-double {
@@ -106,9 +134,10 @@ const {
   }
 
   .champ label {
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.35rem;
     text-align: left;
     width: auto;
+    color: var(--color-text);
   }
 
   .champ input {
@@ -117,48 +146,59 @@ const {
 
   li:not(.ligne-double):not(.consentement) label {
     display: block;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.35rem;
+    color: var(--color-text);
   }
 
   input,
   textarea {
-    font: 1em sans-serif;
+    font: inherit;
     width: 100%;
     box-sizing: border-box;
-    border: 1px solid #999;
-    border-radius: 4px;
-    padding: 0.4rem 0.6rem;
+    border: 1px solid rgba(0, 0, 0, 0.18);
+    border-radius: 10px;
+    padding: 0.65rem 0.8rem;
+    background: rgba(255, 255, 255, 0.82);
+    color: var(--color-text);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: rgba(0, 0, 0, 0.55);
   }
 
   input:focus,
   textarea:focus {
-    border-color: var(--color-text);
+    border-color: var(--color-text-titre);
+    box-shadow: 0 0 0 3px rgba(90, 158, 167, 0.16);
     outline: none;
+    background: rgba(255, 255, 255, 0.95);
   }
 
   textarea {
     vertical-align: top;
-    height: 5em;
+    min-height: 8rem;
     resize: vertical;
   }
 
   .consentement {
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    align-items: flex-start;
+    gap: 0.6rem;
   }
 
   .consentement input[type="checkbox"] {
     width: auto;
+    margin-top: 0.25rem;
+    accent-color: var(--color-button);
+  }
+
+  .consentement label {
+    text-align: left;
   }
 
   button.bouton-fonce {
-    background-color: var(--color-button);
-    border: 2px solid white;
-    cursor: pointer;
-    font: inherit;
-    -webkit-appearance: none;
-    appearance: none;
     display: block;
     margin: 1.5rem auto 0;
   }
@@ -169,33 +209,34 @@ const {
     border-color: #e53935;
   }
 
-  /* Messages de retour */
   .form-success,
   .form-error {
     display: none;
     margin-top: 1rem;
-    padding: 0.75rem 1rem;
-    border-radius: 6px;
+    padding: 0.85rem 1rem;
+    border-radius: 10px;
     text-align: center;
     font-weight: 500;
   }
 
   .form-success {
-    background-color: #d4edda;
-    color: #155724;
+    background-color: #dcefdc;
+    color: #1f5c2c;
   }
 
   .form-error {
-    background-color: #f8d7da;
-    color: #721c24;
+    background-color: #f6dada;
+    color: #7a1f2d;
   }
 
   @media (max-width: 480px) {
+    .section-formulaire {
+      padding: 2.5rem 1rem;
+    }
+
     form {
       padding: 1rem;
-      width: 95%;
-      box-sizing: border-box;
-      overflow-x: hidden;
+      width: 100%;
     }
 
     .ligne-double {
@@ -210,36 +251,42 @@ const {
 </style>
 
 <script>
-  const form = document.getElementById('formulaire-contact') as HTMLFormElement;
-  const successMsg = document.getElementById('form-success') as HTMLElement;
-  const errorMsg = document.getElementById('form-error') as HTMLElement;
+  const form = document.getElementById('formulaire-contact');
+  const successMsg = document.getElementById('form-success');
+  const errorMsg = document.getElementById('form-error');
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+  if (
+    form instanceof HTMLFormElement &&
+    successMsg instanceof HTMLElement &&
+    errorMsg instanceof HTMLElement
+  ) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
 
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData);
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
 
-    try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
 
-      const result = await response.json();
+        const result = await response.json();
 
-      if (result.success) {
-        successMsg.style.display = 'block';
-        errorMsg.style.display = 'none';
-        form.reset();
-      } else {
+        if (result.success) {
+          successMsg.style.display = 'block';
+          errorMsg.style.display = 'none';
+          form.reset();
+        } else {
+          errorMsg.style.display = 'block';
+          successMsg.style.display = 'none';
+        }
+      } catch {
         errorMsg.style.display = 'block';
         successMsg.style.display = 'none';
       }
-    } catch {
-      errorMsg.style.display = 'block';
-      successMsg.style.display = 'none';
-    }
-  });
+    });
+  }
 </script>

@@ -9,7 +9,7 @@ interface Props {
 const {
   titre,
   lienLabel = "Parlons de votre projet",
-  lienHref = `${import.meta.env.BASE_URL}contact`,
+  lienHref = new URL('contact', Astro.url).pathname,
   image
 } = Astro.props;
 ---

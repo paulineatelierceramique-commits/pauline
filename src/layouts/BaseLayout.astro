@@ -13,47 +13,109 @@ const {
   ogImage,
   canonical,
   schema
-} = Astro.props;---
+} = Astro.props;
+---
 
 <html lang="fr">
-	<head>
-		<Head
-	  title={title}
-    description={description}
-    ogTitle={ogTitle}
-    ogDescription={ogDescription}
-    ogImage={ogImage}
-    canonical={canonical}
-    schema={schema}
+  <head>
+    <Head
+      title={title}
+      description={description}
+      ogTitle={ogTitle}
+      ogDescription={ogDescription}
+      ogImage={ogImage}
+      canonical={canonical}
+      schema={schema}
     />
-	  </head>
+  </head>
 
-	<body>
-		<Header />
-        <main>
-            <slot />
-        </main>
-        <Footer />
-        <BackToTop />
-	
-<script>
-  import "../scripts/menu.js";
+  <body>
+    <Header />
+
+    <main>
+      <slot />
+    </main>
+
+    <Footer />
+    <BackToTop />
+
+    <div class="cursor-dot" aria-hidden="true"></div>
+
+   <script>
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  if (finePointer.matches && !reducedMotion.matches) {
+    document.documentElement.classList.add('has-custom-cursor');
+
+    const dot = document.querySelector('.cursor-dot');
+    const interactiveSelector = 'a, button, input, textarea, select, [data-cursor="hover"]';
+
+    const showDot = () => {
+      if (dot instanceof HTMLElement) dot.classList.add('is-visible');
+    };
+
+    const hideDot = () => {
+      if (dot instanceof HTMLElement) dot.classList.remove('is-visible', 'is-hover', 'is-pressed');
+    };
+
+    window.addEventListener('mousemove', (event) => {
+      if (!(dot instanceof HTMLElement)) return;
+
+      dot.style.left = `${event.clientX}px`;
+      dot.style.top = `${event.clientY}px`;
+      showDot();
+    });
+
+    window.addEventListener('mouseout', (event) => {
+      if (event.relatedTarget === null) hideDot();
+    });
+
+    window.addEventListener('mouseover', (event) => {
+      if (event.relatedTarget === null) showDot();
+    });
+
+    document.addEventListener('mouseover', (event) => {
+      const target = event.target;
+      if (dot instanceof HTMLElement && target instanceof Element && target.closest(interactiveSelector)) {
+        dot.classList.add('is-hover');
+      }
+    });
+
+    document.addEventListener('mouseout', (event) => {
+      const target = event.target;
+      if (dot instanceof HTMLElement && target instanceof Element && target.closest(interactiveSelector)) {
+        dot.classList.remove('is-hover');
+      }
+    });
+
+    document.addEventListener('mousedown', () => {
+      if (dot instanceof HTMLElement) dot.classList.add('is-pressed');
+    });
+
+    document.addEventListener('mouseup', () => {
+      if (dot instanceof HTMLElement) dot.classList.remove('is-pressed');
+    });
+  }
 </script>
 
-<script>
-  import AOS from 'aos';
-  import 'aos/dist/aos.css';
-  
-  AOS.init({
-    duration: 800,
-    once: true,
-    offset: 0,
-  });
+    <script>
+      import "../scripts/menu.js";
+    </script>
 
-  setTimeout(() => {
-    AOS.refresh();
-  }, 100);
-</script>
+    <script>
+      import AOS from 'aos';
+      import 'aos/dist/aos.css';
 
-	</body>
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 0,
+      });
+
+      setTimeout(() => {
+        AOS.refresh();
+      }, 100);
+    </script>
+  </body>
 </html>
