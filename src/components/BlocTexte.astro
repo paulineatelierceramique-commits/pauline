@@ -1,7 +1,6 @@
 ---
 interface Props {
   titre?: string;
-  description?: string;
   boutonTexte?: string;
   boutonLien?: string;
   sapLien?: string;
@@ -11,85 +10,170 @@ interface Props {
 
 const {
   titre = "Petits travaux de bricolage à domicile",
-  description = "J'accompagne les particuliers...",
-  boutonTexte, //
-  boutonLien, //
-  sapLien = "https://www.servicesalapersonne.gouv.fr/...",
+  boutonTexte,
+  boutonLien,
+  sapLien = "https://www.servicesalapersonne.gouv.fr/",
   sapImage,
   sapImageAlt = "logo officiel service à la personne",
 } = Astro.props;
 ---
 
 <section class="presentation">
-  <div class="container" data-aos="fade-up">
-    <h2>{titre}</h2>
-    <p set:html={description} />
-  </div>
+  <div class="presentation-inner">
+    <div class="text-block" data-aos="fade-up">
+      {titre && (
+        <div class="main-text">
+          <h2>{titre}</h2>
+        </div>
+      )}
 
-  <div class="cta" data-aos="fade-up" data-aos-delay="200">
-    <div class="texte-cta">
-      {boutonTexte && (
-      <a href={boutonLien} class="bouton-fonce">{boutonTexte}</a>
-      )}
-      {sapImage && (  // 👈 conditionnel ici aussi
-      <p>Éligible au <a href={sapLien} target="_blank" rel="noopener noreferrer"  class="lien-texte">Service à la personne</a> selon prestations</p>
-      )}
+      <div class="secondary-text">
+        <slot />
+      </div>
     </div>
 
-    {sapImage && (
-      <a href={sapLien} target="_blank" rel="noopener noreferrer" class="image-cta" aria-label="En savoir plus sur le CESU">
-        <img src={sapImage} alt={sapImageAlt} width="220" height="162" />
-      </a>
+    {(boutonTexte || sapImage) && (
+      <div class="cta" data-aos="fade-up" data-aos-delay="200">
+        <div class="texte-cta">
+          {boutonTexte && boutonLien && (
+            <a href={boutonLien} class="bouton-fonce">{boutonTexte}</a>
+          )}
+
+          {sapImage && (
+            <p>
+              Éligible au
+              <a href={sapLien} target="_blank" rel="noopener noreferrer" class="lien-texte">
+                Service à la personne
+              </a>
+              selon prestations.
+            </p>
+          )}
+        </div>
+
+        {sapImage && (
+          <a
+            href={sapLien}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="image-cta"
+            aria-label="En savoir plus sur le service à la personne"
+          >
+            <img src={sapImage} alt={sapImageAlt} width="220" height="162" loading="lazy" />
+          </a>
+        )}
+      </div>
     )}
   </div>
 </section>
 
-
 <style>
-
-.presentation {
-  padding: 2% 0; 
-  text-align:start;
-  background: var(--color-bg2);
+  .presentation {
+  background: var(--color-bg1);
   color: var(--color-text);
+  margin: 0;
+  padding: 0 10%;
 }
+
+.presentation-inner {
+  padding: 0 5% 5%;
+}
+
+.text-block {
+  width: 100%;
+  max-width: 100%;
+}
+
+.main-text {
+  margin-bottom: 1rem;
+}
+
+.secondary-text {
+  width: 100%;
+  max-width: 100%;
+}
+
+.secondary-text :global(p) {
+  margin: 0 0 1rem 0;
+}
+
+.secondary-text :global(p:last-child) {
+  margin-bottom: 0;
+}
+
+.secondary-text :global(ul),
+.secondary-text :global(ol) {
+  margin: 1rem 0;
+  padding-left: 1.2rem;
+}
+
+.secondary-text :global(li) {
+  margin-bottom: 0.5rem;
+}
+
 .cta {
   display: flex;
-  flex: 1;
-  margin: 0;
-  padding: 0 5%;
-  justify-content: center;
-  gap: 5rem;
+  justify-content: space-between;
   align-items: center;
+  gap: 3rem;
+  padding-top: 2rem;
 }
 
 .texte-cta {
   display: flex;
   flex-direction: column;
   align-items: start;
+  gap: 1rem;
   max-width: 600px;
-  margin: 0;
 }
 
 .image-cta {
   display: flex;
+  flex-shrink: 0;
 }
+
+.image-cta img {
+  display: block;
+  max-width: 220px;
+  height: auto;
+}
+
+.lien-texte {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
 @media (max-width: 900px) {
+  .presentation {
+    padding: 0 5%;
+    text-align: center;
+  }
+
+  .presentation-inner {
+    padding: 0 0 2rem;
+  }
+
+  .text-block,
+  .secondary-text {
+    max-width: 100%;
+  }
+
   .cta {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    padding: 2rem 0;
+    padding-top: 1.5rem;
     text-align: center;
   }
+
+  .texte-cta {
+    align-items: center;
+  }
+
   .cta .bouton-fonce {
     display: block !important;
     margin-inline: auto !important;
     width: fit-content;
     padding: 1rem 2.5rem;
-  }
-  .texte-cta {
-    align-items: center;
   }
 }
 </style>

@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FilAriane from '../components/FilAriane.astro';
 import Hero from '../components/Hero.astro';
+import BlocTexte from '../components/BlocTexte.astro';
 import { siteConfig } from '../config/site.ts';
 import Action from '../components/Action.astro';
 
@@ -57,40 +58,39 @@ const schema = [
 
   <Hero 
     titre="Pauline Rébufat"
-    texte={`<p>J'ai poussé la porte d'une salle de boxe à 14 ans. Sans vraiment le savoir, ce jour-là, j'ai découvert bien plus qu'un sport. J'ai trouvé un endroit où ressentir mon <strong>corps comme une force, où me dépasser et être moi</strong>. J'ai pratiqué la boxe pendant des années, jusqu'au niveau semi-professionnel, et cette passion ne m'a plus jamais quittée.</p>
-
-    <p>En parallèle, la vie m'a menée vers un autre chemin, celui de l'humain.</p>
-
-    <p>Pendant plus de quinze ans, j'ai travaillé comme Aide Médico-Psychologique puis comme Monitrice Éducatrice. D'abord auprès d'adultes en situation de handicap, puis auprès de jeunes atteints de Troubles du Spectre de l'Autisme (TSA). Au quotidien, j'ai appris à <strong>lire ce que les mots ne disent pas</strong>. À adapter, à créer un espace de sécurité, à accueillir chaque personne <strong>là où elle en est</strong>, en toute bienveillance.</p>
-
-    <p>Et puis c'est là, entre la boxe et ma vie professionnelle, qu'une évidence s'est imposée.<br>
-    <strong>Le corps ne ment pas.<br> Les émotions vivent en lui.<br>
-    Et c'est par le corps qu'on peut libérer les émotions.</strong></p>
-
-
-<h2>La naissance d'une conviction</h2>
-    <p>En 2019, je commence à creuser cette intuition. A l'issue d'une formation exigente, j'obtiens mon Diplôme Fédéral de boxe anglaise qui me permet de devenir coach. C'est une première étape importante, mais cela ne suffit pas. Alors je continue à me former, j'échange, j'imagine comment allier ma passion pour la boxe et mon expérience dans le médico-social. En juin 2024, j'obtiens ma <strong>certification de Boxe Thérapeute</strong> :  une victoire dont je suis encore très fière. En septembre 2024, mes premières séances en tant que boxe thérapeute débutent.</p>
-<p>Depuis, j'ai compris que ce que l'on porte en silence ne reste pas toujours bloqué. Par le mouvement, le corps peut relâcher les tensions, le mental respirer à nouveau... et la confiance revenir peu à peu.</p>
-
-<h2>En quoi je crois</h2>
-<p>Je crois que tout le monde mérite un espace pour <strong>se sentir mieux</strong>, quel que soit son âge, son corps ou son histoire.</p>
-<p>Je crois que le corps est souvent le chemin le plus court vers l'apaisement.<br>
-Et que chaque émotion mérite d'être entendue, pas enfouie.</p>
-<p>Il est possible de libérer ce qui avait besoin de s'exprimer.</p>
-<p>Loin des séances formatées, loin des performances imposées,  juste un espace clair, bienveillant, fait pour toi.</p>
-
-<h2>Aujourd'hui</h2>
-<p>J'accompagne des <strong>enfants, des adolescents, des adultes</strong>, chacun avec son vécu, ses ressentis, et ses objectifs. À <strong>Saumur et dans un rayon de 20 km</strong>, en <strong>séance individuelle ou en atelier collectif</strong>, chez toi, en extérieur ou au sein de ta structure.</p>
-<p>Que tu traverses une période difficile, que tu cherches à te reconnecter à toi-même, ou que tu aies simplement une <strong>furieuse envie d'aller mieux</strong> :  tu es exactement à ta place ici.</p>
-`}
     image={monImage}
     imageAlt="photo de Pauline en train de travailler la terre"
     lienLabel="Découvrez mes créations"
     lienHref={`${import.meta.env.BASE_URL}`}
-    />
+    >
 
+    <h2>Créer avec la matière</h2>
+
+  <p>Je suis Pauline Rébufat, potière-céramiste depuis plus de 20 ans. Depuis le début, je cherche à créer des pièces qui relient la matière, la simplicité et la douceur. Mon travail s’est construit pas à pas, entre formation, pratique, recherche et envie de faire naître des objets utiles ou décoratifs qui aient une présence sensible.
+J’ai commencé à travailler la terre à travers différents apprentissages, puis j’ai développé mon activité au fil du temps dans mon atelier, en participant à des marchés, des salons et des expositions. Cette expérience m’a permis d’affiner mon geste et de construire un univers qui me ressemble vraiment.</p>
+<h2>Une céramique simple et sensible</h2>
+<p>Ce que j’aime dans la céramique, c’est le lien direct avec la matière. Je travaille le grès, la terra cotta et parfois d’autres terres selon les effets recherchés. J’aime les surfaces qui restent vivantes, les émaux fabriqués à l’atelier, les nuances de cuisson et les contrastes subtils.
+Je cherche à faire des pièces sobres, épurées, sincères. Des pièces qui ne cherchent pas à impressionner, mais à accompagner le quotidien avec discrétion et justesse. La matière doit se voir, se sentir et raconter quelque chose.</p>
+<h2>Créer pour le quotidien</h2>
+<p>Je crée des vaisselles sur commande, des pièces décoratives, des fleurs en céramique, des objets inspirés du bord de mer et des formes naturelles. Certaines créations sont pensées pour la table, d’autres pour le jardin, la maison ou les moments de partage.
+Je travaille aussi des collections plus personnelles, comme la série “galet”, qui s’inspire de l’univers marin et des formes arrondies. J’aime cette façon de faire dialoguer l’objet, la matière et l’émotion.</p>
+
+   
+  </Hero>
   
+  <BlocTexte
+  titre="Transmettre le geste"
+  boutonTexte="Me contacter"
+  boutonLien={`${import.meta.env.BASE_URL}contact`}
+  >
+  
+  <p>Je propose également des stages de poterie pour partager le plaisir de travailler la terre. Pour moi, créer ne consiste pas seulement à produire des objets : c’est aussi transmettre une manière de faire, un rapport au temps, à la patience et à la matière.
+Ces stages permettent de découvrir la poterie dans une approche simple et accessible, sans pression. On vient pour essayer, comprendre, façonner et repartir avec quelque chose de concret, fait de ses mains.</p>
+<h2>Un travail fait main</h2>
+<p>Tout ce que je propose est façonné à la main, avec des matières naturelles et une attention portée aux détails. Je choisis la simplicité, l’authenticité et la cohérence plutôt que la surproduction ou l’effet.
+Mon envie, au fond, est simple : faire entrer dans le quotidien des objets qui donnent envie de ralentir, de regarder, de toucher et d’apprécier ce qui est juste.</p>
 
+</BlocTexte>
 
  <Action />
 

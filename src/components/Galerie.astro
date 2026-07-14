@@ -67,12 +67,12 @@ const {
 </div>
 
 <script>
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const closeBtn = document.getElementById('lightbox-close');
-  let lastTrigger = null;
+  const lightbox = document.getElementById('lightbox') as HTMLElement | null;
+  const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement | null;
+  const closeBtn = document.getElementById('lightbox-close') as HTMLButtonElement | null;
+  let lastTrigger: HTMLElement | null = null;
 
-  function openLightbox(src, alt, trigger) {
+  function openLightbox(src: string, alt: string, trigger: HTMLElement) {
     if (!lightbox || !lightboxImg || !closeBtn) return;
     lightboxImg.src = src;
     lightboxImg.alt = alt;
@@ -88,14 +88,14 @@ const {
     lightboxImg.src = '';
     lightboxImg.alt = '';
     document.body.style.overflow = '';
-    if (lastTrigger instanceof HTMLElement) lastTrigger.focus();
+    if (lastTrigger) lastTrigger.focus();
   }
 
   document.addEventListener('click', (event) => {
     const target = event.target;
     const button = target instanceof Element ? target.closest('.galerie-button') : null;
 
-    if (button) {
+    if (button instanceof HTMLElement) {
       const src = button.getAttribute('data-image');
       const alt = button.getAttribute('data-alt') || '';
       if (src) openLightbox(src, alt, button);

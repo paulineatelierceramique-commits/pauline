@@ -3,7 +3,6 @@ import type { ImageMetadata } from 'astro';
 
 interface Props {
   titre: string;
-  texte: string;
   lienLabel?: string;
   lienHref?: string;
   image: ImageMetadata;
@@ -14,7 +13,6 @@ interface Props {
 
 const {
   titre,
-  texte,
   lienLabel = "Découvrez mes services",
   lienHref = `${import.meta.env.BASE_URL}services`,
   image,
@@ -22,19 +20,21 @@ const {
   imageWidth = 386,
   imageHeight = 289
 } = Astro.props;
-
-const base = import.meta.env.BASE_URL;
-const texteAvecBase = texte.replace(/__BASE__/g, base.endsWith('/') ? base : base + '/');
-
 ---
 
 <div class="hero">
-
   <div class="text-hero">
-    <div class="main-text"><h1 set:html={titre}/></div>
-<div class="secondary-text" set:html={texteAvecBase} />
+    <div class="main-text">
+      <h1>{titre}</h1>
+    </div>
+
+    <div class="secondary-text">
+      <slot />
+    </div>
+
     <a href={lienHref} class="bouton-fonce">{lienLabel}</a>
   </div>
+
   <div class="hero-img">
     <img
       src={image.src}
@@ -44,12 +44,9 @@ const texteAvecBase = texte.replace(/__BASE__/g, base.endsWith('/') ? base : bas
       loading="lazy"
     />
   </div>
-  
 </div>
 
 <style>
-
-/* effet zoom-in */
 @keyframes zoomIn {
   from {
     opacity: 0;
@@ -62,7 +59,7 @@ const texteAvecBase = texte.replace(/__BASE__/g, base.endsWith('/') ? base : bas
 }
 
 .hero {
-  background-color: var(--color-bg1);  
+  background-color: var(--color-bg1);
   display: flex;
   flex: 1;
   margin: 0;
@@ -80,13 +77,11 @@ const texteAvecBase = texte.replace(/__BASE__/g, base.endsWith('/') ? base : bas
   padding: 5%;
   color: var(--color-text);
   animation: zoomIn 0.8s ease forwards;
-
 }
 
 .hero-img {
   display: flex;
   animation: zoomIn 0.8s ease forwards;
-
 }
 
 .hero-img img {
@@ -96,6 +91,7 @@ const texteAvecBase = texte.replace(/__BASE__/g, base.endsWith('/') ? base : bas
   margin: 30px;
   border-radius: 12px;
 }
+
 @media screen and (max-width: 900px) {
   .hero {
     flex-direction: column;
@@ -103,24 +99,29 @@ const texteAvecBase = texte.replace(/__BASE__/g, base.endsWith('/') ? base : bas
     padding: 0 5%;
     text-align: center;
   }
+
   .text-hero {
     width: 100%;
     align-items: center;
     margin-bottom: 20px;
   }
+
   .hero-img img {
     max-width: 80%;
     margin: 0 0 20px 0;
     margin-inline: auto !important;
     display: block;
   }
+
   .main-text {
     font-size: clamp(28px, 5vw, 42px);
   }
+
   .secondary-text {
     font-size: inherit;
   }
-  .bouton-clair {
+
+  .bouton-fonce {
     display: block !important;
     margin-inline: auto !important;
     text-align: center;
@@ -128,5 +129,4 @@ const texteAvecBase = texte.replace(/__BASE__/g, base.endsWith('/') ? base : bas
     margin: 10px 0;
   }
 }
-
 </style>

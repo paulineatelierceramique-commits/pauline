@@ -3,7 +3,6 @@ import type { ImageMetadata } from 'astro';
 
 interface Props {
   titre: string;
-  texte: string;
   lienLabel?: string;
   lienHref?: string;
   image: ImageMetadata;
@@ -14,9 +13,8 @@ interface Props {
 
 const {
   titre,
-  texte,
   lienLabel,
-  lienHref = `${import.meta.env.BASE_URL}services`,
+  lienHref = `${import.meta.env.BASE_URL}apropos`,
   image,
   imageAlt,
   imageWidth = 600,
@@ -32,26 +30,29 @@ const {
       width={imageWidth}
       height={imageHeight}
       loading="lazy"
-    >
+    />
   </div>
 
   <div class="text-hero" data-aos="fade-left">
     <div class="main-text"><h2>{titre}</h2></div>
-    <div class="secondary-text" set:html={texte} />
+
+    <div class="secondary-text">
+      <slot />
+    </div>
+
     {lienLabel && (
-  <a href={lienHref} class="bouton-fonce">{lienLabel}</a>
-    )}  
-</div>
+      <a href={lienHref} class="bouton-fonce">{lienLabel}</a>
+    )}
+  </div>
 </div>
 
 <style>
-
 .hero {
   background: var(--color-bg2);
   display: flex;
   gap: 2rem;
   margin: 0;
-  padding: 0 10%;
+  padding: 2rem 10%;
   justify-content: space-between;
   align-items: center;
 }
@@ -78,7 +79,7 @@ const {
   width: 100%;
   max-width: 700px;
   height: auto;
-  margin: 0;
+  margin: 1rem 0;
   border-radius: 12px;
 }
 
@@ -128,8 +129,8 @@ const {
     display: block;
   }
 
- .hero-img {
-    order: 2; /* image en dessous */
+  .hero-img {
+    order: 2;
     width: 100%;
   }
 

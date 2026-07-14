@@ -42,14 +42,13 @@ h1 {
   font-family: 'Tomatoes', cursive;
   color: var(--color-text-titre);
   font-weight: 400; /* Great Vibes n'a que le 400 */
-  margin: 0;
-  line-height: 1.5;
-  font-size: 70px; /* augmente ici — essaie 64px, 72px ou 80px */
+  margin: 0 0 0.45em 0;
+  line-height: 1.05;
+  font-size: clamp(2.6rem, 6vw, 4.375rem); /* ~42px à 70px */
 }
 
 h2 {
   font-size: 28px;
-  text-align: center;
   font-weight: 500; /* moins gras que 700 — essaie aussi 400 ou 600 */
 }
 
@@ -59,6 +58,10 @@ h3, strong {
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
+}
+
+.main-text h1 {
+  max-width: 10ch;
 }
 
 .container {
@@ -151,10 +154,7 @@ a {
   transform: translateY(-2px);
 }
 
-h2 {
-  font-size: 28px;
-  text-align: center;
-}
+
 :root {
   --cursor-dot-size: 14px;
   --cursor-dot-color: var(--color-button);
@@ -217,4 +217,15 @@ button,
     border-color 0.2s ease,
     box-shadow 0.2s ease,
     transform 0.2s ease;
+}
+@media screen and (max-width: 900px) {
+  .main-text h1 {
+    max-width: 100%;
+    font-size: clamp(2.2rem, 10vw, 3.2rem);
+    line-height: 1.1;
+  }
+
+  .text-hero {
+    padding-inline: 1rem;
+  }
 }

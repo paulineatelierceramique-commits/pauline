@@ -43,27 +43,26 @@ const schema = [
   
   <Hero 
      titre="Infos pratiques et contact"
-    texte={`<h2>Une question, ou l'envie d'en savoir plus ?</h2>
-    <p>Écrivez-moi ou appellez-moi directement. Je réponds à chaque message avec attention.<br>
-    📞  06 60 82 87 75<br>
+    image={monImage}
+    imageAlt="image de Pauline Rébufat, céramiste dans le Pays de Retz"
+    lienLabel="Découvrez les céramiques de Pauline"
+    lienHref={`${import.meta.env.BASE_URL}`}
+  >
+    <h2>Une question, ou l'envie d'en savoir plus ?</h2>
+    <p>Vous cherchez une céramiste dans le Pays de Retz, une vaisselle artisanale en grès, une création décorative unique ou un stage de poterie ? Je serai heureuse d’échanger avec vous.</p>
+   <p> 📞  06 60 82 87 75<br>
     📧  <a href="mailto:pauline.rebufat@gmail.com">pauline.rebufat@gmail.com</a> </p>
     <div class="reseaux">
   <a href="https://www.instagram.com/lesceramiquesdepauline/" target="_blank" rel="noopener">
-    <img src="__BASE__icons/instagram.svg" alt="Instagram" width="22" height="22" />
-    Les céramiques de Pauline
+    <img src={`${import.meta.env.BASE_URL}icons/instagram.svg`} alt="Instagram" width="22" height="22" />
+     Les céramiques de Pauline
   </a> <br>
   <a href="https://www.facebook.com/CERAMIQUEPAULINEREBUFAT" target="_blank" rel="noopener">
-    <img src="__BASE__icons/facebook.svg" alt="Facebook" width="22" height="22" />
-    Les Céramiques de Pauline
+    <img src={`${import.meta.env.BASE_URL}icons/facebook.svg`} alt="Facebook" width="22" height="22" />
+     Les Céramiques de Pauline
   </a>
 </div>
-    `}
-    image={monImage}
-    imageAlt="image de Natacha, boxe thérapeute à saumur"
-    lienLabel="Découvrez les céramiques de Pauline"
-    lienHref={`${import.meta.env.BASE_URL}`}
-  />
-    
+  </Hero>
 
   <Formulaire
     action="/traitement-pauline"

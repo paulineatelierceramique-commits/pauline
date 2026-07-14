@@ -252,80 +252,95 @@ const mesEtapes = [
   ]} 
 >
   <Hero
-    titre="Pauline Rébufat Créations Céramiques"
-    texte="<p><strong>ici le slogan principal</strong></p>
-            <em>une phrase courte qui complète la promesse</em>
-          <p><strong>Métier</strong> ville et zone d'intervention : le Pays de Retz</p>
-
-<p>J'accompagne mes clients avec une approche humaine, claire et adaptée à leurs besoins. </p>
- <p>Ce texte de démonstration permet de visualiser la structure du hero avant de le personnaliser pour un vrai projet.</p>"
-    image={monImage}
-    imageAlt="image alt"
-    lienLabel="Je prends contact"
-    lienHref={`${import.meta.env.BASE_URL}contact`}
-  />
+  titre="Pauline Rébufat Créations Céramiques"
+  image={monImage}
+  imageAlt="Photo de créations céramiques"
+  lienLabel="Je prends contact"
+  lienHref={`${import.meta.env.BASE_URL}contact`}
+>
+  <h2>Créations céramiques artisanales et stages de poterie</h2>
+  <p>
+    Je suis Pauline Rébufat, <strong>céramiste</strong> depuis plus de 20 ans.
+    Je crée des <strong>pièces artisanales en grès, en terra cotta et en porcelaine</strong>,
+    avec l’envie de faire entrer un peu de douceur, de matière et de beauté simple dans le quotidien.
+  </p>
+</Hero>
 
 <ImageBg
 
-    titre="Pauline céramique"
+    titre="La céramique, entre matière et émotion"
     lienLabel="Réserver un atelier"
     image={imageHero2}
     >
       <p>
-        Découvrez des ateliers de céramique pensés pour apprendre, créer et prendre le temps.
-        Que vous soyez débutant·e ou déjà à l’aise avec la terre, chaque séance vous aide à
-        développer votre geste et votre univers.
+        La céramique est pour moi un art du geste, de la matière et du temps. Je façonne chaque pièce à la main pour créer des objets utiles ou décoratifs, pensés pour durer et pour trouver naturellement leur place dans une maison, sur une table ou dans un jardin.
+J’aime que la matière reste visible. J’aime aussi qu’une pièce raconte quelque chose sans en faire trop : une présence, une texture, une simplicité qui apaise. C’est ce lien entre l’objet et l’émotion qui guide mon travail.
+
       </p>
   </ImageBg>
 
 
   <HeroLeft
-  titre="Présenter votre approche"
-  texte={`
-    <p>Ici, j'explique simplement votre activité et votre manière d'accompagner vos clients</p>
-
-      <p>Cette section de démonstration sert à montrer comment afficher un texte plus développé, avec plusieurs paragraphes, un sous-titre et une liste de points clés.</p>
-
-    <p>L’idée est de garder une structure réaliste, sans rester sur un contenu trop lié à un projet client précis.</p>
-
-    <h3>Ce que cette section peut mettre en avant</h3>
-    <ul>
-      <li>Votre façon de travailler</li>
-      <li>Les bénéfices pour vos clients</li>
-      <li>Votre posture ou votre méthode</li>
-      <li>Les éléments qui vous différencient</li>
-      <li>Le cadre de votre accompagnement</li>
-    </ul>
-  `}
+  titre="Mon univers de céramiste"
+  lienLabel="Mon parcours de céramiste"
   image={tonImage}
-  imageAlt="image de démonstration"
-/>
+  imageAlt="Atelier de céramique"
+>
+  <p>
+    Je cherche à créer un univers doux et poétique, où la simplicité devient une force. J’aime les lignes sobres, les couleurs naturelles, les matières franches et les objets qui donnent envie de ralentir un peu.
+  </p>
+
+  
+  <ul>
+    <li>Je crée tout à la main, dans une démarche artisanale sincère.</li>
+    <li>J’utilise des terres naturelles comme le grès et la terra cotta.</li>
+    <li>Je fabrique mes émaux à l’atelier pour obtenir des effets uniques.</li>
+    <li>Je privilégie des formes simples, lisibles et intemporelles.</li>
+    <li>Je crée des pièces utiles, décoratives et alimentaires.</li>
+
+  </ul>
+
+</HeroLeft>
   
 
 <ImageBg
 
-    titre="Pauline céramique"
+    titre="Ce que je propose"
     lienLabel="Réserver un atelier"
     image={imageHero2}
     >
-      <p>
-        Découvrez des ateliers de céramique pensés pour apprendre, créer et prendre le temps.
-        Que vous soyez débutant·e ou déjà à l’aise avec la terre, chaque séance vous aide à
-        développer votre geste et votre univers.
-      </p>
+    <h3>Mes créations en céramique</h3> 
+    <p>
+        Je crée sur commande de la vaisselle en grès aux lignes épurées, ainsi que des pièces décoratives inspirées du bord de mer, de la nature et des formes simples du quotidien. Selon les envies et les besoins, je réalise aussi des objets pour la décoration de table, la maison, le jardin, les cérémonies et les fêtes.
+        Je propose notamment des céramiques artisanales, des pièces en grès, des créations en terra cotta, des fleurs en céramique, des fleurs en porcelaine, des bassins pour les oiseaux, des coquillages imaginaires et des réserves d’eau pour les plantes, aussi appelées oillas.
+    </p>
+    <h3>Les stages de poterie</h3>
+    <p>Je propose aussi des stages de poterie pour découvrir la matière, les gestes et le plaisir de créer avec ses mains. Ces stages s’adressent aux personnes qui souhaitent s’initier ou approfondir une pratique dans une approche simple, accessible et créative.
+Pendant un stage, on prend le temps de modeler, de tourner, d’émailler et de comprendre la transformation de la terre jusqu’à la cuisson. C’est une parenthèse concrète, sensible et apaisante, pensée pour celles et ceux qui aiment le fait main et les expériences artisanales.
+</p>
+
   </ImageBg>
 
 
 
 
 
+
+  <Galerie
+     titre="Les créations de Pauline"
+  intro="Un aperçu de pièces façonnées à la main, entre gestes artisanaux, matières brutes et détails sensibles."
+  creations={creations}
+  />
+
+
+
   <Avis
-    titre="Ils m'ont fait confiance"
-    lienTous="https://share.google/MIFRXhOpA1wNrpwJp" 
+    titre="Témoignages"
+    lienTous="https://share.google/3bHz74gmC3pFYv9cS" 
     avis={[
     {
-      texte: "Un témoignage de démonstration pour visualiser la section avis. Cette zone pourra ensuite accueillir de vrais retours clients adaptés au projet.",
-      auteur: "Claire"
+      texte: "Nous avons participé à des stages de poterie avec Pauline à plusieurs reprises, en famille : une parenthèse vraiment chouette et hors du temps, où tout le monde peut à la fois bénéficier des bons conseils et de l'expérience de Pauline, mais aussi expérimenter, découvrir, manipuler la terre et, pour le plus grand plaisir de tous, essayer le tour ! Pauline est très pédagogue et aime prendre le temps de transmettre sa passion.Ces stages sont en plus l'occasion de découvrir son atelier et donnent envie de repartir avec quelques unes de ses créations artisanales !",
+      auteur: "Audrey"
     },
     {
       texte: "Le starter permet ici de tester l’affichage des retours clients, la longueur du texte et la mise en page sur plusieurs cartes.",
@@ -337,48 +352,39 @@ const mesEtapes = [
     }
   ]}
   />
-
-  <Galerie
-     titre="Les créations de Pauline"
-  intro="Un aperçu de pièces façonnées à la main, entre gestes artisanaux, matières brutes et détails sensibles."
-  creations={creations}
-  />
-
-
-
     
   <QuestionsFrequentes
   questions={[
     {
-      question: "À qui s’adresse votre accompagnement ?",
-      reponse: "Cette offre s’adresse aux personnes, entreprises ou structures qui recherchent un accompagnement adapté à leurs besoins. Chaque projet est étudié au cas par cas afin de proposer une réponse cohérente avec les objectifs et le contexte."
+      question: "C’est quoi la céramique artisanale ?",
+      reponse: "La céramique artisanale désigne des pièces façonnées à la main, avec du temps, du geste et une vraie attention portée à la matière. Chaque création est unique ou réalisée en petite série, avec des formes, des textures et des finitions qui portent la trace du travail de l’artisan."
     },
     {
-      question: "Comment se déroule un premier échange ?",
-      reponse: "Le premier contact permet de faire connaissance, de comprendre votre demande et d’identifier les grandes lignes du projet. C’est une étape importante pour vérifier que l’accompagnement proposé correspond bien à vos attentes."
+      question: "Quelle est la différence entre grès, terre cuite et porcelaine ?",
+      reponse: "Le grès est une terre résistante, souvent utilisée pour la vaisselle et les pièces du quotidien. La terre cuite a un aspect plus chaleureux et mat, avec une belle présence naturelle. La porcelaine, elle, est plus fine, plus lumineuse et plus délicate en apparence. Chaque matière a ses qualités, et je les choisis selon l’effet recherché et l’usage de la pièce."
     },
     {
-      question: "L’accompagnement est-il personnalisé ?",
-      reponse: "Oui, chaque projet est unique. Les contenus, les objectifs, le rythme et les solutions proposées sont ajustés en fonction de votre activité, de vos priorités et de vos besoins."
+      question: "Proposez-vous des stages de poterie dans le Pays de Retz ?",
+      reponse: "Oui, je propose des stages de poterie dans le Pays de Retz pour découvrir ou approfondir le travail de la terre. Ces stages permettent de s’initier au modelage, au tournage et à l’émaillage dans une approche simple, accessible et créative."
     },
     {
-      question: "Combien de temps faut-il prévoir ?",
-      reponse: "La durée dépend du type de projet, de son niveau de complexité et des éléments déjà disponibles. Un calendrier plus précis peut être défini après un premier échange."
+      question: "Où voir vos créations céramiques ?",
+      reponse: "Vous pouvez découvrir mes créations céramiques dans mon atelier, ainsi que selon la saison dans certaines boutiques de créateurs et sur des marchés locaux. Je partage aussi régulièrement mon univers et mes pièces sur mes réseaux sociaux."
     },
     {
-      question: "Proposez-vous un devis ?",
-      reponse: "Oui, un devis peut être établi après avoir clarifié votre besoin. Cela permet de vous proposer une solution adaptée, avec un cadre de travail clair et transparent."
+      question: "Vendez-vous vos pièces en ligne ?",
+      reponse: "Une petite sélection de pièces sera proposée en ligne prochainement. Pour le moment, je privilégie la présentation de mon univers, les points de vente locaux et les échanges directs autour des créations."
     },
     {
-      question: "Peut-on faire évoluer le projet ensuite ?",
-      reponse: "Oui, le projet peut évoluer avec le temps. Le site ou l’accompagnement peut être ajusté selon vos nouveaux besoins, vos retours ou le développement de votre activité."
+      question: "Travaillez-vous pour la décoration de table ou de jardin ?",
+      reponse: "Oui, je crée des pièces qui peuvent s’intégrer à la décoration de table comme à la décoration de jardin. Je réalise par exemple de la vaisselle artisanale, des objets décoratifs, des fleurs en porcelaine, des bassins pour les oiseaux ou encore des réserves d’eau pour les plantes."
     }
   ]}
 />
 
  <Action 
-  titre="Un projet en tête ?"
-  texte="Expliquez votre besoin et échangeons sur la solution la plus adaptée à votre activité."
+  titre="Envie d'en savoir plus ?"
+  texte="Vous avez besoin de renseignements sur les stages, ou bien envie de savoir où trouver mes réalisations ?"
   lienLabel="Me contacter"
   lienHref={`${import.meta.env.BASE_URL}contact`}
 />
