@@ -118,6 +118,7 @@ const {
   background-color: var(--color-bg1);
   color: var(--color-text);
   width: 100%;
+  position: relative;
 }
 
 .galerie-contenu {
@@ -250,6 +251,22 @@ const {
   color: rgba(255, 255, 255, 0.4);
   font-size: 0.8rem;
   pointer-events: none;
+}
+
+.galerie-ceramique::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-bg2),
+    transparent
+  );
 }
 
 @media (max-width: 1000px) {

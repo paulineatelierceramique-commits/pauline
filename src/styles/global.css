@@ -1,7 +1,8 @@
 @import '@fontsource/lexend/400.css';
 @import '@fontsource/lexend/500.css';
 @import '@fontsource/lexend/700.css';
-@import '@fontsource/great-vibes';  /* à enlever si on garde Tomatoes */
+@import '@fontsource/great-vibes';  /* à enlever si on garde Tomatoes et nettoyer en général car doublon ??*/
+
 
 :root {
   --color-bg1: #ffffff;
@@ -16,7 +17,7 @@
 
 body
  {
-  font-family: 'Lexend', system-ui, sans-serif;
+  font-family: 'Satoshi', system-ui, sans-serif;
   font-size: 20px;
   line-height: 1.6;
   margin: 0;
@@ -38,6 +39,14 @@ html, body {
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/pauline/fonts/Satoshi.woff2') format('woff2');/* à modifier pour /fonts/Tomatoes.woff2 à la mise en ligne */
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 h1 {
   font-family: 'Tomatoes', cursive;
   color: var(--color-text-titre);
@@ -49,11 +58,11 @@ h1 {
 
 h2 {
   font-size: 28px;
-  font-weight: 500; /* moins gras que 700 — essaie aussi 400 ou 600 */
+  font-weight: 600; /* moins gras que 700 — essaie aussi 400 ou 600 */
 }
 
 h3, strong {
-  font-weight: 500; /* le gras reste sur h2, h3, strong */
+  font-weight: 600; /* le gras reste sur h2, h3, strong */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -157,9 +166,9 @@ a {
 
 :root {
   --cursor-dot-size: 14px;
-  --cursor-dot-color: var(--color-button);
-  --cursor-dot-color-hover: color-mix(in oklch, var(--color-button) 82%, white);
-  --cursor-dot-shadow: 0 0 0 1px color-mix(in oklch, var(--color-button) 18%, transparent);
+  --cursor-dot-color: var(--color-text-titre);
+  --cursor-dot-color-hover: color-mix(in oklch, var(--color-text-titre) 82%, white);
+  --cursor-dot-shadow: 0 0 0 1px color-mix(in oklch, var(--color-text-titre) 18%, transparent);
 }
 
 @media (hover: hover) and (pointer: fine) {
