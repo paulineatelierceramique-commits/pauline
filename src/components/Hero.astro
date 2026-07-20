@@ -92,6 +92,37 @@ const {
   border-radius: 12px;
 }
 
+
+.secondary-text :global(p) {
+  margin-bottom: 1rem;
+}
+
+.secondary-text :global(a) {
+  color: inherit;
+}
+
+.secondary-text :global(.coordonnees) {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.secondary-text :global(.coordonnees a) {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.secondary-text :global(.coordonnees img) {
+  display: block;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
 @media screen and (max-width: 900px) {
   .hero {
     flex-direction: column;
