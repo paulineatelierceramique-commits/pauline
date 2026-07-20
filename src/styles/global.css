@@ -6,18 +6,18 @@
 
 :root {
   --color-bg1: #ffffff;
-  --color-bg2:#cdedf5 ;
-  --color-text-titre:  #5A9EA7;
+  --color-bg2:#d8edf6 ;
+  --color-text-titre:  #6b9394;
   --color-text: #000000;
   --color-text-inverse: #ffffff;
-  --color-button: #9C7A24;
+  --color-button: #b5921bff;
 
   
 }
 
 body
  {
-  font-family: 'Satoshi', system-ui, sans-serif;
+  font-family: 'Kenzo', system-ui, sans-serif;
   font-size: 20px;
   line-height: 1.6;
   margin: 0;
@@ -40,8 +40,8 @@ html, body {
 }
 
 @font-face {
-  font-family: 'Satoshi';
-  src: url('/pauline/fonts/Satoshi.woff2') format('woff2');/* à modifier pour /fonts/Tomatoes.woff2 à la mise en ligne */
+  font-family: 'Kenzo';
+  src: url('/pauline/fonts/Kenzo.woff2') format('woff2');/* à modifier pour /fonts/Tomatoes.woff2 à la mise en ligne */
   font-weight: 400;
   font-style: normal;
   font-display: swap;

@@ -1,7 +1,7 @@
 ---
-import logo from '../images/logo.webp';
+import logo from '../images/logopauline.svg';
 import { siteConfig } from '../config/site.ts';
-import footerBg from '../images/footerBg.webp';
+import footerBg from '../images/imagebg.webp';
 
 interface Props {
   liens?: { label: string; href: string }[];
@@ -33,7 +33,7 @@ const year = new Date().getFullYear();
 
 
   <div class="footer-logo">
-    <img src={logo.src} alt={`Logo ${siteConfig.name}`} width="250" height="210" />
+    <img src={logo.src} alt={`Logo ${siteConfig.name}`} width="50" height="50" />
   </div>
 
   <div class="footer-menu">
@@ -99,10 +99,8 @@ footer {
 }
 
 .footer-logo img {
-  border-radius: 12px;
-  height: 220px;
+  height: 80px;
   width: auto;
-  border-radius: 12px;
 }
 
 footer p, footer a, footer span {
