@@ -15,78 +15,103 @@ const {
 ---
 
 <div class="hero-service" style={`--bg: url(${image.src})`}>
-  <div class="text-hero-service" data-aos="zoom-in"  >
-    <div class="main-text"><h2>{titre}</h2></div>
-    <div class="secondary-text">
-    <slot />  
-    </div> 
-    <a href={lienHref} class="bouton-fonce">{lienLabel}</a>
+  <div class="hero-service-inner" data-aos="zoom-in">
+    <div class="hero-service-title">
+      <h2>{titre}</h2>
+    </div>
+
+    <div class="hero-service-content">
+      <div class="secondary-text">
+        <slot />
+      </div>
+      <a href={lienHref} class="bouton-fonce">{lienLabel}</a>
+    </div>
   </div>
 </div>
 
 <style>
 
 .hero-service {
-  position: relative; 
+  position: relative;
   background-image: var(--bg);
-  background-size: cover;        /* ← étire l'image pour couvrir tout le div */
-  background-position: center;   /* ← centre l'image */
-  background-repeat: no-repeat;  /* ← empêche la répétition */
-  background-attachment:scroll;
-  width: 100%;  /*100vw; pleine largeur*/
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  width: 100%;
   min-height: calc(100vh - 80px);
   min-height: calc(100svh - 80px);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0 10%;
-  box-sizing: border-box;  
+  box-sizing: border-box;
 }
 
-/* Overlay blanc 
 .hero-service::before {
-  content: '';
+  content: "";
   position: absolute;
-  inset: 0;                      
-  background: rgba(255, 255, 255, 0.6);
+  inset: 0;
+  background: rgba(255, 255, 255, 0.12);
   z-index: 1;
-} */
+}
 
 
-.text-hero-service {
-  z-index: 2;
+.hero-service-inner {
   position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.hero-service-title,
+.hero-service-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-service-title h2 {
+  margin: 0;
+  color: var(--color-text);
+  text-align: left;
+}
+
+.hero-service-content {
+  position: relative;
+  z-index: 2;
+  padding: 1.25rem 1.5rem;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(2px);
+  border-radius: 1rem;
+}
+
+.hero-service-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  color: var(--color-text);
-  max-width: 100%;
-  margin: 0;
-  padding: 5%;
+  align-items: flex-start;
   gap: 1rem;
-}
-.text-hero-service h2 {
-  margin: 0 0 0.5rem 0;
   color: var(--color-text);
 }
-.text-hero-service .secondary-text {
-  
-  margin: 0;  
-  color: var(--color-text);
+
+.hero-service-content .secondary-text {
+  margin: 0;
   font-size: inherit;
   line-height: inherit;
 }
 
-.secondary-text p {
+.hero-service-content .secondary-text p {
   margin: 0;
 }
 
-.text-hero-service * {
-  max-width: 100%;                 /* TOUT texte respecte */
+.hero-service-content * {
+  max-width: 100%;
   word-wrap: break-word;
   box-sizing: border-box;
 }
-
 
 
 
@@ -94,25 +119,26 @@ const {
   .hero-service {
     padding: 1.5rem 5%;
     min-height: 100vh;
-    min-height: 100svh; 
-   } }
-
-@media (min-width: 1024px) {
-  .hero-service {
-    background-attachment: fixed;
+    min-height: 100svh;
   }
-  
 
-  .text-hero-service {
-    align-items: center;
-    text-align: center;
-    margin: 0;
-    max-width: 100%;
+  .hero-service-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
   }
-  .bouton-fonce {
-    display: block !important;
-    margin-inline: auto !important;
-    width: fit-content;
+
+  .hero-service-title,
+  .hero-service-content {
+    width: 100%;
+  }
+
+  .hero-service-title h2 {
+    text-align: left;
+  }
+
+  .hero-service-content {
+    align-items: flex-start;
   }
 }
 </style>
