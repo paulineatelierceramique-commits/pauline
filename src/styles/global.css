@@ -59,7 +59,7 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
   font-weight: 600;
   line-height: 1.15;
 }
