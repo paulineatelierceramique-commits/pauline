@@ -11,11 +11,11 @@ interface Props {
 
 const {
   liens = [
-    { label: "Accueil", href: `${import.meta.env.BASE_URL}` },
+    { label: "Accueil", href: "/" },
     // { label: "Boutique", href: "https://pauline-rebufat.bigcartel.com/", external: true },
-    { label: "Boutique", href: `${import.meta.env.BASE_URL}boutiqueprovisoire` },
-    { label: "À propos", href: `${import.meta.env.BASE_URL}apropos` },
-    { label: "Contact", href: `${import.meta.env.BASE_URL}contact` }
+    { label: "Boutique", href: "/boutiqueprovisoire" },
+    { label: "À propos", href: "/apropos" },
+    { label: "Contact", href: "/contact" }
   ]
 } = Astro.props;
 ---
