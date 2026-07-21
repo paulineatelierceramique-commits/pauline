@@ -24,7 +24,7 @@ const schema = [
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Accueil", "item": siteConfig.url },
-      { "@type": "ListItem", "position": 2, "name": "Contact", "item": `${siteConfig.url}contact` }
+      { "@type": "ListItem", "position": 2, "name": "Contact", "item": `${siteConfig.url}/contact` }
     ]
   }
 ]
@@ -33,7 +33,7 @@ const schema = [
 <BaseLayout
   title="Contacter Pauline Rébufat"
   description="Contactez Pauline Rébufat, céramiste dans le pays de Retz. Par téléphone, email ou formulaire. Réponse rapide à chaque message."
-  canonical={`${siteConfig.url}contact`}
+  canonical={`${siteConfig.url}/contact`}
   ogTitle={`Contacter ${siteConfig.name}`}
   ogDescription={`Contactez ${siteConfig.name} pour toute question sur Pauline Rébufat Créations Céramiques.`}
   schema={schema}
@@ -85,7 +85,7 @@ const schema = [
     titre = "Vous voulez en savoir davantage sur moi ?",
   texte = "",
   lienLabel = "Découvrir mon parcours",
-  lienHref = `${import.meta.env.BASE_URL}apropos`
+  lienHref = `${import.meta.env.BASE_URL}/apropos`
 
 />
 

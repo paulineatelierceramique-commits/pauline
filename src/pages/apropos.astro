@@ -14,14 +14,14 @@ const schema = [
   {
     "@context": "https://schema.org",
     "@type": "AboutPage",
-    "url": `${siteConfig.url}apropos`
+    "url": `${siteConfig.url}/apropos`
   },
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Accueil", "item": siteConfig.url },
-      { "@type": "ListItem", "position": 2, "name": "À propos", "item": `${siteConfig.url}apropos` }
+      { "@type": "ListItem", "position": 2, "name": "À propos", "item": `${siteConfig.url}/apropos` }
     ]
   }
 ]
@@ -37,7 +37,7 @@ const schema = [
     {
       "@context": "https://schema.org",
       "@type": "AboutPage",
-      "url": `${siteConfig.url}apropos`,
+      "url": `${siteConfig.url}/apropos`,
       "name": "À propos de Pauline Rébufat, céramiste"
     },
     {
@@ -45,7 +45,7 @@ const schema = [
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Accueil", "item": siteConfig.url },
-        { "@type": "ListItem", "position": 2, "name": "À propos", "item": `${siteConfig.url}apropos` }
+        { "@type": "ListItem", "position": 2, "name": "À propos", "item": `${siteConfig.url}/apropos` }
       ]
     }
   ]}
@@ -61,7 +61,7 @@ const schema = [
     image={monImage}
     imageAlt="photo de Pauline en train de travailler la terre"
     lienLabel="Découvrez mes créations"
-    lienHref={`${import.meta.env.BASE_URL}boutiqueprovisoire`}
+    lienHref={`${import.meta.env.BASE_URL}/boutiqueprovisoire`}
     >
 
     <h2>Créer avec la matière</h2>
