@@ -4,7 +4,7 @@ export const siteConfig = {
   url: "https://paulinerebufat.fr",
   tagline: "Céramiste dans le Pays de retz",
   description: "Pauline, céramiste et potière expérimentée. Atelier, cours et exposition dans le Pays de Retz",
-  defaultOgImage: "https://www.natacha-boxetherapie.fr/natacha1.jpeg",
+  defaultOgImage: "https://paulineatelierceramique-commits.github.io/pauline/",
   telephone: "+33660828775",
   email: "pauline.rebufat@gmail.com",
   facebook: "https://www.facebook.com/CERAMIQUEPAULINEREBUFAT",
