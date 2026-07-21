@@ -7,7 +7,7 @@
 :root {
   --color-bg1: #ffffff;
   --color-bg2:#d8edf6 ;
-  --color-text-titre:  #6b9394;
+  --color-text-titre:  #4f7894;
   --color-text: #000000;
   --color-text-inverse: #ffffff;
   --color-button: #b5921bff;
@@ -148,7 +148,7 @@ a {
 
 .bouton-fonce {
   background-color: var(--color-button);
-  color: var(--color-text-inverse);
+  color: var(--color-text);
   margin: 20px;
   border-radius: 20px;
   border: 2px solid white;
@@ -234,6 +234,12 @@ button,
   .main-text h1 {
     max-width: 100%;
     
+  }
+  .bouton-clair,
+  .bouton-fonce {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
   }
 
   .text-hero {
