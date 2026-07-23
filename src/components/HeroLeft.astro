@@ -47,24 +47,25 @@ const {
 </div>
 
 <style>
+
 .hero {
   background: var(--color-bg2);
   display: flex;
-  gap: 2rem;
-  margin: 0;
-  padding: 2rem 10%;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  margin: 0;
+  padding: clamp(2rem, 5vw, 4rem) 10%;
 }
 
 .text-hero {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   flex: 1 1 0;
   min-width: 0;
   margin: 0;
-  padding: 2rem 0;
+  padding: 0;
   color: var(--color-text);
 }
 
@@ -79,7 +80,6 @@ const {
   width: 100%;
   max-width: 700px;
   height: auto;
-  margin: 1rem 0;
   border-radius: 12px;
 }
 
@@ -106,27 +106,27 @@ const {
   color: var(--color-button);
 }
 
+.secondary-text :global(a) {
+  color: inherit;
+}
+
+.secondary-text :global(:last-child) {
+  margin-bottom: 0;
+}
+
 @media screen and (max-width: 900px) {
   .hero {
     flex-direction: column;
     align-items: center;
-    padding: 2rem 5%;
+    padding: 2rem 1rem;
     text-align: center;
   }
 
   .text-hero {
     width: 100%;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
     order: 1;
-  }
-
-  .hero-img img {
-    max-width: 100%;
-    max-width: 500px;
-    height: auto;
-    margin: 0 auto 20px;
-    display: block;
   }
 
   .hero-img {
@@ -134,20 +134,17 @@ const {
     width: 100%;
   }
 
-  .main-text {
-    font-size: clamp(28px, 5vw, 42px);
-  }
-
-  .secondary-text {
-    font-size: inherit;
+  .hero-img img {
+    max-width: 500px;
+    margin: 0 auto;
+    display: block;
   }
 
   .bouton-fonce {
     display: block !important;
-    margin-inline: auto !important;
-    text-align: center;
     width: fit-content;
-    margin: 10px 0;
+    margin: 0.75rem auto 0 !important;
+    text-align: center;
   }
 }
 </style>

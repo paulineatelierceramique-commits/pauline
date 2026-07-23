@@ -17,19 +17,36 @@ const {
 
 <section class="faq-section">
   <h2 data-aos="fade-up">{titre}</h2>
-  {questions.map((item, index) => (
-    <div class="faq-item" data-aos="fade-up" data-aos-delay={index * 100}>
-  <h3 class="faq-question">
-    <button type="button" class="faq-question-btn">
-      <span>{item.question}</span>
-      <span class="faq-toggle">+</span>
-    </button>
-  </h3>
-  <div class="faq-answer">
-    <p> {item.reponse} </p>
-  </div>
-</div>
-  ))}
+  {questions.map((item, index) => {
+    const answerId = `faq-answer-${index}`;
+    const buttonId = `faq-button-${index}`;
+
+    return (
+      <div class="faq-item" data-aos="fade-up" data-aos-delay={index * 100}>
+        <h3 class="faq-question">
+          <button
+            type="button"
+            class="faq-question-btn"
+            id={buttonId}
+            aria-expanded="false"
+            aria-controls={answerId}
+          >
+            <span>{item.question}</span>
+            <span class="faq-toggle" aria-hidden="true">+</span>
+          </button>
+        </h3>
+        <div
+          class="faq-answer"
+          id={answerId}
+          role="region"
+          aria-labelledby={buttonId}
+          hidden
+        >
+          <p>{item.reponse}</p>
+        </div>
+      </div>
+    );
+  })}
 </section>
 
     <style>
@@ -37,7 +54,7 @@ const {
 
 .faq-section {
   background: var(--color-bg2);
-  padding: 2% 10%;
+  padding: 2rem 10%;
 }
 
 .faq-section h2 {
@@ -91,25 +108,41 @@ const {
   color: var(--color-text);
 }
 
-.faq-answer.active {
-  display: block;
-}
+
 
 .faq-answer p {
   margin: 0.75rem 0 0;
 }
+
+@media (max-width: 900px) {
+  .faq-section {
+    padding: 2rem 5%;
+  }
+}
     </style>
 
 <script>
+  const buttons = document.querySelectorAll('.faq-question-btn');
 
-  document.querySelectorAll('.faq-question').forEach(q => {
-    q.addEventListener('click', () => {
-      const answer = q.nextElementSibling;
-      if (!answer) return;
-      const isActive = answer.classList.contains('active');
-      document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('active'));
-      if (!isActive) answer.classList.add('active');
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const answerId = button.getAttribute('aria-controls');
+      const answer = answerId ? document.getElementById(answerId) : null;
+      const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+      buttons.forEach((btn) => {
+        const id = btn.getAttribute('aria-controls');
+        const panel = id ? document.getElementById(id) : null;
+        btn.setAttribute('aria-expanded', 'false');
+        if (panel) {
+          panel.hidden = true;
+        }
+      });
+
+      if (!isExpanded && answer) {
+        button.setAttribute('aria-expanded', 'true');
+        answer.hidden = false;
+      }
     });
   });
-
-</script>   
+</script>

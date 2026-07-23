@@ -1,5 +1,4 @@
 ---
-// Script : props optionnelles - retravailler quand j'aurai le vrai logo : ne pas laisser l'image et affiner le svg
 import Navigation from './Navigation.astro';
 import logo from '../images/logopauline.svg';
 
@@ -7,88 +6,58 @@ const {
   altLogo = "Logo",
 } = Astro.props;
 ---
-<header>
+<header class="site-header">
+  <a class="header-logo" href={`${import.meta.env.BASE_URL}`} aria-label="Accueil">
+    <img src={logo.src} alt={altLogo} width="80" height="80" />
+  </a>
 
-<div class="header-logo" aria-label={altLogo}>
-    
-<img src={logo.src} alt={altLogo} width="50" height="50"> 
-
-</div>
-
-<Navigation>
-
-</Navigation>
-  
-
+  <Navigation />
 </header>
 
 <style>
 
-header {
+.site-header {
   position: relative;
-  background: var(--color-bg1); 
-  color: var(--color-text);
   display: flex;
   align-items: center;
-  padding-right: 20rem;
-  padding-bottom: 0.5rem;
+  justify-content: space-between;
+  gap: var(--space-6);
+  padding: 1rem 10%;
+  background: var(--color-bg1);
+  color: var(--color-text);
 }
 
-header::after {
+.site-header::after {
   content: "";
   position: absolute;
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
-  width: 80%;
+  width: min(1200px, calc(100% - 2rem));
   height: 2px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    var(--color-bg2),
-    transparent
-  );
+  background: linear-gradient(to right, transparent, var(--color-bg2), transparent);
 }
 
 .header-logo {
-  display: flex;
-  padding: 1rem 15rem;
-}
-.header-logo img {
-  height: 80px;
-  width: auto;
-  overflow: hidden;
-}
-
-.header-logo svg {
-  height: 100px;
-  width: 100px;
+  display: inline-flex;
+  align-items: center;
   flex-shrink: 0;
 }
 
-
+.header-logo img {
+  width: auto;
+  height: 80px;
+}
 
 @media (max-width: 900px) {
-  header {
-    padding-right: 1rem;
-    padding-bottom: 3rem;
+  .site-header {
     justify-content: center;
     flex-wrap: wrap;
-  }
-  .header-logo {
-    padding: 0.75rem 1rem;
+    padding: 1rem;
   }
 
- 
-}
-
-@media (max-width: 480px) {
-  header {
-    padding-right: 0.5rem;
-  }
-  .header-logo {
-    padding: 0.5rem;
+  .header-logo img {
+    height: 64px;
   }
 }
-
 </style>

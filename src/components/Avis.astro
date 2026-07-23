@@ -32,7 +32,7 @@ const {
   <p class="avis-source" data-aos="fade-up" data-aos-delay={avis.length * 100}>
     Avis issus de Google —
     <a href={lienTous} target="_blank" rel="noopener">
-      👉<strong>Voir tous les avis</strong>
+      <strong>Voir tous les avis</strong>
     </a>
   </p>
   
@@ -42,7 +42,7 @@ const {
 
 .avis {
   width: 100%;
-  padding: 3rem 1.5rem;
+  padding: 3rem 10%;
   text-align: center;
   background-color: var(--color-bg1);
   color: var(--color-text);
@@ -104,7 +104,7 @@ const {
 
 .avis-source a {
   opacity: 1;
-  color: #000;
+  color: inherit;
   font-weight: 600;
   text-decoration: none;
 }
@@ -130,11 +130,13 @@ const {
   font-size: 1.4rem;
 }
 
-@media (max-width: 700px) {
-  .avis {
-    padding: 2.5rem 1rem;
-  }
 
+
+  @media (max-width: 700px) {
+  .avis {
+    padding: 2.5rem 5%;
+  }
+}
   .avis-list {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -155,5 +157,5 @@ const {
     display: inline-block;
     word-break: keep-all;
   }
-}
+
 </style>

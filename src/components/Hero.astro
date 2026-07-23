@@ -58,34 +58,38 @@ const {
 .hero {
   background-color: var(--color-bg1);
   display: flex;
-  flex: 1;
-  margin: 0;
-  padding: 0 10%;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  margin: 0;
+  padding: clamp(2rem, 5vw, 4rem) 10%;
 }
 
 .text-hero {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
+  flex: 1 1 0;
+  min-width: 0;
   max-width: 100%;
   margin: 0;
-  padding: 5%;
+  padding: 0;
   color: var(--color-text);
   animation: zoomIn 0.8s ease forwards;
 }
 
 .hero-img {
   display: flex;
+  flex: 1 1 0;
+  min-width: 0;
+  justify-content: center;
   animation: zoomIn 0.8s ease forwards;
 }
 
 .hero-img img {
+  width: 100%;
   max-width: 700px;
-  width: auto;
   height: auto;
-  margin: 0 20px;
   border-radius: 12px;
 }
 
@@ -120,47 +124,39 @@ const {
   flex-shrink: 0;
 }
 
+.secondary-text :global(:last-child) {
+  margin-bottom: 0;
+}
+
 @media screen and (max-width: 900px) {
   .hero {
     flex-direction: column;
     align-items: center;
-    padding: 0 5%;
+    padding: 2rem 1rem;
     text-align: center;
   }
 
-  .hero-img {
-  width: 100%;
-}
-
-.hero-img img {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  margin: 0 auto 20px;
-  display: block;
-}
   .text-hero {
     width: 100%;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
   }
 
-  
-
-  .main-text {
-    font-size: clamp(28px, 5vw, 42px);
+  .hero-img {
+    width: 100%;
   }
 
-  .secondary-text {
-    font-size: inherit;
+  .hero-img img {
+    max-width: 500px;
+    margin: 0 auto;
+    display: block;
   }
 
   .bouton-fonce {
     display: block !important;
-    margin-inline: auto !important;
-    text-align: center;
     width: fit-content;
-    margin: 10px 0;
+    margin: 0.75rem auto 0 !important;
+    text-align: center;
   }
 }
 </style>

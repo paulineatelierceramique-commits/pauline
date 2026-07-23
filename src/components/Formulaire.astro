@@ -12,8 +12,8 @@ const {
 
     <form action="https://api.web3forms.com/submit" method="POST" data-aos="fade-up" id="formulaire-contact">
       <input type="hidden" name="access_key" value="a4dd15ab-f21b-47ea-bfce-3eaa565f9ca9" />
-      <input type="hidden" name="subject" value="Nouveau message depuis le site Natacha Boxe Thérapie" />
-      <input type="checkbox" name="botcheck" style="display:none;" />
+      <input type="hidden" name="subject" value="Nouveau message depuis le site Pauline Rébufat Créations Céramiques" />
+      <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" class="honeypot" />
 
       <ul>
         <li class="ligne-double">
@@ -52,7 +52,7 @@ const {
       <button type="submit" class="bouton-fonce">Envoyer le message</button>
 
       <p class="form-success" id="form-success" aria-live="polite">
-        ✅ Message envoyé ! Natacha vous répondra dans les plus brefs délais.
+        ✅ Message envoyé ! Pauline vous répondra dans les plus brefs délais.
       </p>
 
       <p class="form-error" id="form-error" aria-live="polite">
@@ -64,20 +64,23 @@ const {
 
 <style>
 
-  h2 {
-    text-align: center;
-  }
+  .section-formulaire h2 {
+  text-align: center;
+  margin: 0 0 1.5rem 0;
+  padding-top: 0;
+  color: var(--color-text);
+}
   
-  .section-formulaire {
-    position: relative;
-    padding: clamp(3rem, 6vw, 5rem) 1.5rem;
-    background-image: var(--form-bg-image);
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    isolation: isolate;
-  }
+ .section-formulaire {
+  position: relative;
+  padding: clamp(3rem, 6vw, 5rem) 10%;
+  background-image: var(--form-bg-image);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  isolation: isolate;
+}
 
   .section-formulaire::before {
     content: "";
@@ -103,6 +106,12 @@ const {
     padding-top: 0;
     color: var(--color-text);
   }
+
+  .honeypot {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
 
   form {
     margin: 0 auto;
@@ -254,6 +263,14 @@ const {
       margin-top: 0;
     }
   }
+
+  @media (max-width: 900px) {
+  .section-formulaire {
+    padding: 2.5rem 5%;
+    background-attachment: scroll;
+  }
+}
+
 </style>
 
 <script>

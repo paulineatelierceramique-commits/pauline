@@ -5,20 +5,20 @@
 /* bouton pour remonter */
 #back-to-top {
   position: fixed;
-  bottom: 2rem;
-  bottom: max(2rem, env(safe-area-inset-bottom));  /* iOS safe area */
-  right: 2rem;
+  right: 1rem;
+  bottom: max(1rem, env(safe-area-inset-bottom));
   width: 44px;
   height: 44px;
-  border-radius: 50%;
-  background-color: var(--color-sauge);
-  color: var(--color-gris-fonce);
-  font-size: 1.2rem;
   border: none;
+  border-radius: 999px;
+  background-color: var(--color-button);
+  color: var(--color-text);
+  box-shadow: var(--shadow-soft);
+  font-size: 1.2rem;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   opacity: 0;
   visibility: hidden;
+  transform: translateY(8px);
   transition: opacity 0.3s ease, transform 0.3s ease;
   z-index: 100;
 }
@@ -26,11 +26,12 @@
 #back-to-top.visible {
   opacity: 1;
   visibility: visible;
+  transform: translateY(0);
 }
 
-#back-to-top:hover {
-  background-color: color-mix(in oklch, var(--color-sauge) 80%, black);
-  transform: translateY(-3px);
+#back-to-top:hover,
+#back-to-top:focus-visible {
+  background-color: color-mix(in oklch, var(--color-button) 80%, black);
 }
 
 </style>

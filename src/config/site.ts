@@ -1,9 +1,9 @@
 // src/config/site.ts
 export const siteConfig = {
-  name: "Céramique Pauline Rébufat",
+  name: "Pauline Rébufat Créations Céramiques",
   url: "https://paulinerebufat.fr",
-  tagline: "Céramiste dans le Pays de retz",
-  description: "Pauline Rébufat Créations Céramiques. Stages et expositions dans le Pays de Retz",
+  tagline: "Créations céramiques, stages et expositions",
+  description: "Pauline Rébufat Créations Céramiques. Découvrez ses pièces artisanales, ses stages de poterie et ses expositions dans le Pays de Retz.",
   defaultOgImage: "https://paulinerebufat.fr/mains.webp",
   telephone: "+33660828775",
   email: "pauline.rebufat@gmail.com",
@@ -11,7 +11,7 @@ export const siteConfig = {
   themeColor: "#d8edf6",
   adresse: {
     rue: "",
-    ville: "Saint Père en Retz",
+    ville: "Saint-Père-en-Retz",
     codePostal: "44320",
     pays: "FR"
   },

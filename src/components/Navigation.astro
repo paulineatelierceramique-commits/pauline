@@ -12,7 +12,6 @@ interface Props {
 const {
   liens = [
     { label: "Accueil", href: `${import.meta.env.BASE_URL}` },
-    // { label: "Boutique", href: "https://pauline-rebufat.bigcartel.com/", external: true },
     { label: "Boutique", href: `${import.meta.env.BASE_URL}/boutiqueprovisoire` },
     { label: "À propos", href: `${import.meta.env.BASE_URL}/apropos` },
     { label: "Contact", href: `${import.meta.env.BASE_URL}/contact` }
@@ -21,9 +20,9 @@ const {
 ---
 
 <nav class="nav" aria-label="Navigation principale">
-  <div class="elements desktop-links">
-    <div class="links">
-      {liens.map((lien) => (
+  <ul class="desktop-links">
+    {liens.map((lien) => (
+      <li>
         <a
           href={lien.href}
           target={lien.external ? "_blank" : undefined}
@@ -31,68 +30,89 @@ const {
         >
           {lien.label}
         </a>
-      ))}
-    </div>
-  </div>
+      </li>
+    ))}
+  </ul>
 
   <details class="mobile-menu">
-    <summary aria-label="Ouvrir le menu">
+    <summary aria-label="Ouvrir le menu principal">
       <span></span>
       <span></span>
       <span></span>
     </summary>
 
-    <div class="mobile-panel">
+    <ul class="mobile-panel">
       {liens.map((lien) => (
-        <a
-          href={lien.href}
-          target={lien.external ? "_blank" : undefined}
-          rel={lien.external ? "noopener noreferrer" : undefined}
-        >
-          {lien.label}
-        </a>
+        <li>
+          <a
+            href={lien.href}
+            target={lien.external ? "_blank" : undefined}
+            rel={lien.external ? "noopener noreferrer" : undefined}
+          >
+            {lien.label}
+          </a>
+        </li>
       ))}
-    </div>
+    </ul>
   </details>
 </nav>
 
 <style>
+
 .nav {
   margin-left: auto;
   position: relative;
 }
 
-.elements {
-  display: flex;
-  justify-content: flex-end;
+.desktop-links,
+.mobile-panel {
+  list-style: none;
   margin: 0;
   padding: 0;
-  font-size: 0.90em;
 }
 
-.links {
+.desktop-links li,
+.mobile-panel li {
+  list-style: none;
+}
+
+.desktop-links {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 1.25rem;
+  font-size: var(--text-sm);
 }
 
-.links a,
+.desktop-links a,
 .mobile-panel a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   font-size: inherit;
   white-space: nowrap;
   text-decoration: none;
   color: inherit;
 }
 
+.desktop-links a:hover,
+.desktop-links a:focus-visible,
+.mobile-panel a:hover,
+.mobile-panel a:focus-visible {
+  color: var(--color-text-titre);
+}
+
 .mobile-menu {
   display: none;
+  position: relative;
+  margin-left: auto;
 }
 
 .mobile-menu summary {
   list-style: none;
   cursor: pointer;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+  justify-content: center;
   width: 44px;
   height: 44px;
   padding: 0;
@@ -106,7 +126,6 @@ const {
 
 .mobile-menu summary span {
   position: absolute;
-  right: 9px;
   width: 26px;
   height: 2px;
   background: currentColor;
@@ -141,24 +160,28 @@ const {
 }
 
 .mobile-panel {
-  margin-top: 0.75rem;
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  right: 0;
   min-width: 220px;
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
   padding: 0.85rem 0.9rem;
-  background: inherit;
-  color: inherit;
+  background: var(--color-bg1);
+  color: var(--color-text);
   border: 1px solid rgba(140, 106, 42, 0.18);
   border-radius: 0.9rem;
   box-shadow: 0 10px 20px rgba(60, 40, 10, 0.08);
+  z-index: 20;
 }
 
 .mobile-panel a {
-  display: block;
-  font-size: 0.95rem;
-  line-height: 1.25;
-  padding: 0.3rem 0;
+  display: flex;
+  align-items: center;
+  padding: 0.35rem 0;
+  font-size: var(--text-sm);
+  line-height: 1.3;
 }
 
 @media screen and (max-width: 900px) {
@@ -168,7 +191,6 @@ const {
 
   .mobile-menu {
     display: block;
-    margin-left: auto;
   }
 }
 </style>

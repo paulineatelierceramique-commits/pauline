@@ -16,8 +16,8 @@ const {
 
 <div class="action" data-aos="fade-up">
   <div class="action-sub">
-    <div class="action-title">{titre}</div>
-    <div class="action-text">{texte}</div>
+    <h2 class="action-title">{titre}</h2>
+    {texte && <p class="action-text">{texte}</p>}
   </div>
   <div class="cta">
     <a href={lienHref} class="bouton-fonce">{lienLabel}</a>
@@ -31,35 +31,42 @@ const {
   color: var(--color-text);
   display: flex;
   justify-content: center;
-  gap: 5rem;
-  flex-wrap: wrap;
   align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
   margin: 0;
-  padding: 0 5%;
-  border-bottom: 1px solid oklch(1 0 0 / 0.15); ;
+  padding: 2rem 10%;
+  border-bottom: 1px solid oklch(1 0 0 / 0.15);
+  text-align: center;
 }
 
 .action-sub {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  margin: 0;
-  padding: 0 5%;
+  gap: 0.75rem;
+  max-width: 700px;
 }
 
 .action-title {
-  font-weight: 900;
-  display: flex;
+  margin: 0;
 }
 
 .action-text {
-  display: flex;
+  margin: 0;
 }
+
 .cta {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 900px) {
+  .action {
+    padding: 2rem 5%;
+    gap: 1.5rem;
+  }
 }
 
     </style>

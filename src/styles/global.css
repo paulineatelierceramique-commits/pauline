@@ -1,37 +1,46 @@
-
-@import '@fontsource/great-vibes';  /* à enlever si on garde Tomatoes et nettoyer en général car doublon ??*/
-
-
 :root {
   --color-bg1: #ffffff;
-  --color-bg2:#d8edf6 ;
-  --color-text-titre:  #4f7894;
-  --color-text: #000000;
+  --color-bg2: #d8edf6;
+  --color-text: #111111;
+  --color-text-titre: #4f7894;
   --color-text-inverse: #ffffff;
-  --color-button: #b5921bff;
+  --color-button: #b5921b;
 
-  
-}
+  --font-body: 'Kenzo', system-ui, sans-serif;
+  --font-display: 'Tomatoes', cursive;
 
-body
- {
-  font-family: 'Kenzo', system-ui, sans-serif;
-  font-size: clamp(1rem, 1.2vw, 1.25rem);
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
- /* overflow-x: hidden; /*pas de scroll horizontal*/
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  --text-sm: clamp(0.95rem, 0.2vw + 0.9rem, 1rem);
+  --text-base: clamp(1rem, 0.3vw + 0.95rem, 1.125rem);
+  --text-lg: clamp(1.125rem, 0.8vw + 1rem, 1.375rem);
+  --text-xl: clamp(1.5rem, 1.8vw + 1.1rem, 2.4rem);
+  --text-2xl: clamp(2.4rem, 4vw, 4.375rem);
 
-html, body {
-  overflow-x: hidden;
+  --line-body: 1.65;
+  --line-heading: 1.15;
+
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --shadow-soft: 0 4px 10px oklch(0 0 0 / 0.15);
+
+  --cursor-dot-size: 14px;
+  --cursor-dot-color: var(--color-text-titre);
+  --cursor-dot-color-hover: color-mix(in oklch, var(--color-text-titre) 82%, white);
+  --cursor-dot-shadow: 0 0 0 1px color-mix(in oklch, var(--color-text-titre) 18%, transparent);
 }
 
 @font-face {
   font-family: 'Tomatoes';
-  src: url('/pauline/fonts/Tomatoes.woff2') format('woff2');/* à modifier pour /fonts/Tomatoes.woff2 à la mise en ligne */
+  src: url('/pauline/fonts/Tomatoes.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -39,62 +48,10 @@ html, body {
 
 @font-face {
   font-family: 'Kenzo';
-  src: url('/pauline/fonts/Kenzo.woff2') format('woff2');/* à modifier pour /fonts/Tomatoes.woff2 à la mise en ligne */
+  src: url('/pauline/fonts/Kenzo.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-}
-
-h1 {
-  font-family: 'Tomatoes', cursive;
-  color: var(--color-text-titre);
-  font-weight: 400; /* Great Vibes n'a que le 400 */
-  letter-spacing: 0.01em;
-  margin: 0 0 0.45em 0;
-  line-height: 1.25;
-  font-size: clamp(2.8rem, 6vw, 4.375rem); /* ~42px à 70px */
-  text-wrap: balance;
-}
-
-h2 {
-  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-  font-weight: 600;
-  line-height: 1.15;
-}
-
-h3, strong {
-  font-weight: 600; /* le gras reste sur h2, h3, strong */
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
-}
-
-.main-text h1 {
-  max-width: 13ch;
-}
-
-.container {
-  max-width: 1300px;   /* ajuster selon la largeur souhaitée */
-  margin-inline: auto; /* centre le container horizontalement*/
-  padding-inline: clamp(1rem, 5%, 3rem); /*espace intérieur gauche droite : min 16px, idéalement 5% max 48px, s'adapte automoatiquement*/
-  width: 100%; /* prend toute la largeur disponible de son parent dans la limite du max width */
-  box-sizing: border-box; /* padding inclus dans la largeur calculée */
-}
-
-p, li {
-  text-align: left;
-  hyphens: auto;
-}
-
-.links {
-  display: flex;
-  gap: 20px;
-  
-}
-
-.links a {
-  font-size: inherit;
 }
 
 *,
@@ -103,54 +60,174 @@ p, li {
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--line-body);
+  color: var(--color-text);
+  background: var(--color-bg1);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+main {
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  line-height: var(--line-heading);
+  text-wrap: balance;
+}
+
+h1 {
+  font-family: var(--font-display);
+  color: var(--color-text-titre);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  margin-bottom: 0.45em;
+  font-size: var(--text-2xl);
+}
+
+h2 {
+  font-size: var(--text-xl);
+  font-weight: 500;
+  margin-bottom: 0.6em;
+}
+
+h3 {
+  font-size: var(--text-lg);
+  font-weight: 500;
+  margin-bottom: 0.5em;
+}
+
+p,
+li {
+  margin-top: 0;
+  font-size: var(--text-base);
+  line-height: var(--line-body);
+  text-align: left;
+  hyphens: auto;
+}
+
+strong {
+  font-weight: 600;
+}
+
 a {
+  color: inherit;
   text-decoration: none;
-  color: inherit;       /* même couleur que le texte */
-  font-weight: 400;     /* optionnel */
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
-/*
-.main-text {
-  font-size: 42px;
-  color: #f9faf8; 
-  margin: 0;
-}
-*/
 
-/*
-.secondary-text {
+button,
+.bouton-fonce {
+  font: inherit;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-text-titre);
+  outline-offset: 3px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1300px;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 5%, 3rem);
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+}
+
+.links a {
   font-size: inherit;
-  color: #f2eef7;
-  margin: 0;
 }
-*/
 
+.main-text h1 {
+  max-width: 13ch;
+}
 
 .bouton-fonce {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  max-width: 100%;
+  padding: 0.75rem 1rem;
+  margin: 20px;
+  border: 2px solid var(--color-bg1);
+  border-radius: var(--radius-lg);
   background-color: var(--color-button);
   color: var(--color-text);
-  margin: 20px;
-  border-radius: 20px;
-  border: 2px solid white;
-  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; 
-  display: inline-block;       /* Respecte largeur parent */
-  max-width: 100%;             /* Jamais plus large */
-  box-sizing: border-box;      /*  Inclut padding */
-  padding: 10px;
+  box-shadow: none;
 }
 
-.bouton-fonce:hover {
+.bouton-fonce:hover,
+.bouton-fonce:focus-visible {
   background-color: color-mix(in oklch, var(--color-button) 80%, black);
   border-color: var(--color-bg1);
-  box-shadow: 0 4px 10px oklch(0 0 0 / 0.25);
+  box-shadow: var(--shadow-soft);
   transform: translateY(-2px);
 }
 
+.bouton-fonce:active {
+  transform: translateY(0);
+}
 
-:root {
-  --cursor-dot-size: 14px;
-  --cursor-dot-color: var(--color-text-titre);
-  --cursor-dot-color-hover: color-mix(in oklch, var(--color-text-titre) 82%, white);
-  --cursor-dot-shadow: 0 0 0 1px color-mix(in oklch, var(--color-text-titre) 18%, transparent);
+@media (max-width: 900px) {
+  .main-text h1 {
+    max-width: 100%;
+  }
+
+  .bouton-fonce {
+    width: fit-content;
+    margin: 20px auto;
+  }
+
+  .text-hero {
+    padding-inline: 1rem;
+  }
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -193,33 +270,19 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .cursor-dot {
     display: none !important;
   }
-}
 
-a,
-button,
-.bouton-fonce {
-  transition:
-    color 0.2s ease,
-    background-color 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease,
-    transform 0.2s ease;
-}
-@media screen and (max-width: 900px) {
-  .main-text h1 {
-    max-width: 100%;
-    
-  }
-  .bouton-fonce {
-    display: block;
-    width: fit-content;
-    margin: 20px auto;
-  }
-
-  .text-hero {
-    padding-inline: 1rem;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

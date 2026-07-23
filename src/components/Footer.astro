@@ -3,9 +3,17 @@ import logo from '../images/logopauline.svg';
 import { siteConfig } from '../config/site.ts';
 import footerBg from '../images/imagebg.webp';
 
+
+
+interface LinkItem {
+  label: string;
+  href: string;
+  external?: boolean;
+}
+
 interface Props {
-  liens?: { label: string; href: string }[];
-  liensLegaux?: { label: string; href: string }[];
+  liens?: LinkItem[];
+  liensLegaux?: LinkItem[];
   createur?: string;
   lienCreateur?: string;
 }
@@ -66,32 +74,39 @@ const year = new Date().getFullYear();
 </footer>
 
 <style>
+
 footer {
   background-image: var(--footerBg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: var(--color-text);
-  text-align: center;
-  padding: 20px;
   display: flex;
   justify-content: space-around;
+  align-items: flex-start;
+  gap: 2rem;
   flex-wrap: wrap;
-
+  padding: 2rem 10%;
+  text-align: center;
 }
+
 .footer-menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-}
-.footer-credit {
-  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.footer-logo {
-    display: flex;
-    align-items: center;
+.footer-menu p {
+  margin: 0 0 0.5rem;
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.footer-menu a,
+.footer-menu span,
+.footer-menu div {
+  font-size: var(--text-sm);
 }
 
 .footer-logo img {
@@ -99,32 +114,18 @@ footer {
   width: auto;
 }
 
-footer p, footer a, footer span {
-    font-size: 0.85em;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;       /* même couleur que le texte */
-}
-
-p {
-    font-weight: bold;
-}
-
-
-
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   footer {
     flex-direction: column;
     align-items: center;
+    padding: 2rem 5%;
     gap: 1.5rem;
   }
+
   .footer-menu {
     width: 100%;
   }
 }
-
 
 </style>
 
