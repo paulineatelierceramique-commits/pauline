@@ -2,10 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import HeroLeft from '../components/HeroLeft.astro';
-import BlocTexteImage from '../components/BlocTexteImage.astro';
 import ImageBg from '../components/ImageBg.astro';
-import Etapes from '../components/Etapes.astro';
-import BlocTexte from '../components/BlocTexte.astro';
 import Avis from '../components/Avis.astro';
 import Galerie from '../components/Galerie.astro';
 import QuestionsFrequentes from '../components/QuestionsFrequentes.astro';
@@ -15,25 +12,11 @@ import { siteConfig } from '../config/site';
 
 
 import monImage from '../images/IMG_8910.webp';
-import maPhoto from '../images/atelier4.webp';
 import tonImage from '../images/IMG_8880.webp';
 import tonImagestage from '../images/mains.webp';
 import imageHero2 from '../images/imagebg.webp';
 
 
-import natacha3 from '../images/natacha3.webp';
-import natacha4 from '../images/natacha4.webp';
-import natacha6 from '../images/natacha6.webp';
-import natacha8 from '../images/natacha8.webp';
-import atelier from '../images/atelier.webp';
-import atelier2 from '../images/atelier2.webp';
-import atelier3 from '../images/atelier3.webp';
-import atelier5 from '../images/atelier5.webp';
-import atelier6 from '../images/atelier6.webp';
-import atelier7 from '../images/atelier7.webp';
-import atelier9 from '../images/atelier9.webp';
-import atelier10 from '../images/atelier10.webp';
-import atelier8 from '../images/atelier8.webp';
 
 import creation1 from '../images/creation1.webp';
 import creation2 from '../images/creation2.webp';
@@ -58,204 +41,188 @@ import creation20 from '../images/creation20.webp';
 
 
 
-
-
 const creations = [
   {
     image: creation1.src,
-    imageAlt: "Vase en céramique émaillé aux tons naturels",
+    imageAlt: "Théière en céramique émaillé aux tons naturels",
     imageWidth: creation1.width,
-    imageHeight: creation1.height,
-    titre: "Vase émaillé"
+    imageHeight: creation1.height
   },
   {
     image: creation2.src,
-    imageAlt: "Tasse en céramique façonnée à la main",
+    imageAlt: "Théière et bol en céramique émaillés et façonnés à la main",
     imageWidth: creation2.width,
-    imageHeight: creation2.height,
-    titre: "Tasse artisanale"
-  },
+    imageHeight: creation2.height
+    },
   {
     image: creation3.src,
-    imageAlt: "Assiette en céramique au décor sobre",
+    imageAlt: "Bol en céramique au décor sobre",
     imageWidth: creation3.width,
-    imageHeight: creation3.height,
-    titre: "Assiette décorative"
-  },
+    imageHeight: creation3.height
+    },
   {
     image: creation4.src,
-    imageAlt: "Ensemble de créations en céramique dans l'atelier",
+    imageAlt: "Théière en céramique aux couleurs très claires",
     imageWidth: creation4.width,
-    imageHeight: creation4.height,
-    titre: "Collection atelier"
-  },
+    imageHeight: creation4.height
+    },
   {
     image: creation5.src,
-    imageAlt: "Ensemble de créations en céramique dans l'atelier",
-    imageWidth: creation4.width,
-    imageHeight: creation4.height,
-    titre: "Collection atelier"
-  },
+    imageAlt: "Mise en scène assiettes et théière sur une table",
+    imageWidth: creation5.width,
+    imageHeight: creation5.height
+    },
   {
     image: creation6.src,
-    imageAlt: "Ensemble de créations en céramique dans l'atelier",
-    imageWidth: creation4.width,
-    imageHeight: creation4.height,
-    titre: "Collection atelier"
-  },
+    imageAlt: "Théière et son sucrier émaillés assortis aux tons clairs",
+    imageWidth: creation6.width,
+    imageHeight: creation6.height
+    },
   {
     image: creation7.src,
-    imageAlt: "Ensemble de créations en céramique dans l'atelier",
-    imageWidth: creation4.width,
-    imageHeight: creation4.height,
-    titre: "Collection atelier"
-  },
+    imageAlt: "Ensemble de tasses, théière et sucrier aux couleurs et émaux assortis",
+    imageWidth: creation7.width,
+    imageHeight: creation7.height
+    },
   {
     image: creation8.src,
-    imageAlt: "Ensemble de créations en céramique dans l'atelier",
-    imageWidth: creation4.width,
-    imageHeight: creation4.height,
-    titre: "Collection atelier"
-  },
+    imageAlt: "Mise en scène du service du thé dans des tasses aux émaux bleu",
+    imageWidth: creation8.width,
+    imageHeight: creation8.height
+    },
   {
     image: creation9.src,
-    imageAlt: "Ensemble de créations en céramique dans l'atelier",
-    imageWidth: creation4.width,
-    imageHeight: creation4.height,
-    titre: "Collection atelier"
-  },
+    imageAlt: "Gros plan d'une tasse en grès émaillée en haut en bleu foncé",
+    imageWidth: creation9.width,
+    imageHeight: creation9.height
+    },
   {
     image: creation10.src,
-    imageAlt: "Ensemble de créations en céramique dans l'atelier",
-    imageWidth: creation4.width,
-    imageHeight: creation4.height,
-    titre: "Collection atelier"
-  },
+    imageAlt: "Mise en scène : l'heure du thé : théière, tasses, assiette et sucrier",
+    imageWidth: creation10.width,
+    imageHeight: creation10.height
+    },
   {
     image: creation11.src,
-    imageAlt: "Ensemble de créations en céramique dans l'atelier",
-    imageWidth: creation4.width,
-    imageHeight: creation4.height,
-    titre: "Collection atelier"
-  },
+    imageAlt: "Gros plan sur un sucrier aux tons très clairs",
+    imageWidth: creation11.width,
+    imageHeight: creation11.height
+    },
   {
     image: creation12.src,
-    imageAlt: "Ensemble de créations en céramique dans l'atelier",
-    imageWidth: creation4.width,
-    imageHeight: creation4.height,
-    titre: "Collection atelier"
-  },
+    imageAlt: "Trois fleurs en porcelaine, pièces décoratives au milieu des herbes du jardin",
+    imageWidth: creation12.width,
+    imageHeight: creation12.height
+    },
   {
     image: creation13.src,
-    imageAlt: "Ensemble de créations en céramique dans l'atelier",
-    imageWidth: creation4.width,
-    imageHeight: creation4.height,
-    titre: "Collection atelier"
-  },
+    imageAlt: "Gros plan sur une fleur bleue en porcelaine, dans l'herbe",
+    imageWidth: creation13.width,
+    imageHeight: creation13.height
+    },
   {
     image: creation14.src,
-    imageAlt: "Ensemble de créations en céramique dans l'atelier",
-    imageWidth: creation4.width,
-    imageHeight: creation4.height,
-    titre: "Collection atelier"
-  },
+    imageAlt: "Mise en scène de décoration de table de fête avec trois fleurs en porcelaine",
+    imageWidth: creation14.width,
+    imageHeight: creation14.height
+    },
   {
     image: creation15.src,
-    imageAlt: "Ensemble de créations en céramique dans l'atelier",
-    imageWidth: creation4.width,
-    imageHeight: creation4.height,
-    titre: "Collection atelier"
-  },
+    imageAlt: "Vue d'une table décorée avec trois fleurs de porcelaine",
+    imageWidth: creation15.width,
+    imageHeight: creation15.height
+    },
   {
     image: creation16.src,
-    imageAlt: "Ensemble de créations en céramique dans l'atelier",
-    imageWidth: creation4.width,
-    imageHeight: creation4.height,
-    titre: "Collection atelier"
-  },
+    imageAlt: "Mise en valeur des fleurs en céramique sur table décorée",
+    imageWidth: creation16.width,
+    imageHeight: creation16.height
+    },
   {
     image: creation17.src,
-    imageAlt: "Ensemble de créations en céramique dans l'atelier",
-    imageWidth: creation4.width,
-    imageHeight: creation4.height,
-    titre: "Collection atelier"
-  },
+    imageAlt: "Décoration de table : fleurs en céramique parmi le lilas",
+    imageWidth: creation17.width,
+    imageHeight: creation17.height
+    },
   {
     image: creation18.src,
-    imageAlt: "Ensemble de créations en céramique dans l'atelier",
-    imageWidth: creation4.width,
-    imageHeight: creation4.height,
-    titre: "Collection atelier"
-  },
+    imageAlt: "Décoration utile de jardin : bassin pour oiseaux, avec oiseaux en céramique",
+    imageWidth: creation18.width,
+    imageHeight: creation18.height
+    },
   {
     image: creation19.src,
-    imageAlt: "Ensemble de créations en céramique dans l'atelier",
-    imageWidth: creation4.width,
-    imageHeight: creation4.height,
-    titre: "Collection atelier"
-  },
+    imageAlt: "Décoration pour le jardin : oiseaux en céramique bleue sur tige de bois",
+    imageWidth: creation19.width,
+    imageHeight: creation19.height
+    },
   {
     image: creation20.src,
-    imageAlt: "Ensemble de créations en céramique dans l'atelier",
-    imageWidth: creation4.width,
-    imageHeight: creation4.height,
-    titre: "Collection atelier"
+    imageAlt: "Décoration pour le potager : céramique au bout d'une tige indiquant mélisse",
+    imageWidth: creation20.width,
+    imageHeight: creation20.height
+    }
+];
+
+const faq = [
+  {
+    question: "Qu'est-ce que la céramique artisanale ?",
+    reponse: "La céramique artisanale désigne des pièces façonnées à la main, avec des gestes artisanaux et une vraie attention portée à la matière. Chaque création est unique ou réalisée en petite série, avec des formes, des textures et des finitions qui portent la trace du travail de l’artisan."
+  },
+  {
+    question: "Quelle est la différence entre argile, grès, faïence et porcelaine ?",
+    reponse: "L’argile est la matière de base utilisée en céramique. Selon sa composition et sa cuisson, elle peut donner différentes terres comme la faïence, le grès ou la porcelaine. La faïence est une terre plus tendre et plus poreuse, cuite à plus basse température. Le grès est plus dense, plus résistant et convient très bien à la vaisselle et aux pièces du quotidien. La porcelaine est une terre plus fine, plus blanche et plus délicate, souvent appréciée pour son aspect lumineux et raffiné. Chaque matière a ses qualités, et je les choisis selon l’effet recherché et l’usage de la pièce."
+  },
+  {
+    question: "Proposez-vous des stages de poterie dans le Pays de Retz ?",
+    reponse: "Oui, je propose des stages de poterie dans le Pays de Retz pour découvrir ou approfondir le travail de la terre. Ces stages permettent de s’initier au modelage, au tournage et à l’émaillage dans une approche simple, accessible et créative."
+  },
+  {
+    question: "Où voir vos créations céramiques ?",
+    reponse: "Vous pouvez découvrir mes créations céramiques dans mon atelier, ainsi que selon la saison dans certaines boutiques de créateurs et sur des marchés locaux. Je partage aussi régulièrement mon univers et mes pièces sur mes réseaux sociaux."
+  },
+  {
+    question: "Vendez-vous vos pièces en ligne ?",
+    reponse: "Une petite sélection de pièces sera proposée en ligne prochainement. Pour le moment, je privilégie la présentation de mon univers, les points de vente locaux et les échanges directs autour des créations."
+  },
+  {
+    question: "Travaillez-vous pour la décoration de table ou de jardin ?",
+    reponse: "Oui, je crée des pièces qui peuvent s’intégrer à la décoration de table comme à la décoration de jardin. Je réalise par exemple de la vaisselle artisanale, des objets décoratifs, des fleurs en porcelaine, des bassins pour les oiseaux ou encore des réserves d’eau pour les plantes."
+  },
+  {
+    question: "D’où viennent les terres et matériaux que vous utilisez ?",
+    reponse: "Je travaille principalement avec des terres céramiques choisies pour leur qualité, leur résistance et leur rendu après cuisson. Selon les pièces, j’utilise notamment du grès de St-Amand-en-Puisaye et de la terre de Provence. J’aime sélectionner des matières naturelles qui me permettent de créer des pièces durables, sensibles et faites main. Les émaux sont alimentaires et préparés à l’atelier, afin d’obtenir des effets uniques sur chaque création."
   }
 ];
 
+const faqSchema = {
+  "@type": "FAQPage",
+  "@id": `${siteConfig.url}/#faq`,
+  "mainEntity": faq.map((item) => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.reponse
+    }
+  }))
+};
 
-const realisations = [
-  { src: natacha3.src, alt: "Natacha Jarry, boxe thérapeute à Saumur", width: 500, height: 333 },
-  { src: natacha4.src, alt: "Natacha seule en train de boxer", width: 500, height: 333 },
-  { src: natacha6.src, alt: "moment de sororité Natacha boxe thérapie", width: 600, height: 399 },
-  { src: natacha8.src, alt: "Natacha boxe et miroir", width: 900, height: 600 },
-  { src: atelier.src, alt: "atelier de boxe thérapie à Saumur", width: 450, height: 600 },
-  { src: atelier2.src, alt: "photo d'un atelier de boxe thérapie à Saumur", width: 350, height: 487 },
-  { src: atelier3.src, alt: "image d'une séance boxe thérapie avec Natacha", width: 450, height: 600 },
-  { src: atelier5.src, alt: "une enfant lors d'un atelier de boxe thérapie à Saumur", width:350, height: 466 },
-  { src: atelier6.src, alt: "Natacha et une élève en boxe thérapie à Saumur", width:518, height: 600 },
-  { src: atelier7.src, alt: "atelier collectif de boxe thérapie à Saumur", width:399, height: 600 },
-  { src: atelier8.src, alt: "atelier avec Natacha boxe thérapie à Saumur", width:399, height: 600 },
-  { src: atelier9.src, alt: "Natacha boxe thérapie à Saumur", width:600, height: 692 },
-  { src: atelier10.src, alt: "séance avec Natacha de boxe thérapie à Saumur", width:600, height: 900 },
-];
-
-const mesEtapes = [
-  { titre: "Premier échange", texte: "Un temps pour faire connaissance, comprendre votre activité et poser les bases du projet." },
-  { titre: "Définition des besoins", texte: "Nous clarifions ensemble vos objectifs, vos priorités et la direction à donner au site." },
-  { titre: "Création du projet", texte: "Je construis une proposition adaptée, avec une structure pensée pour votre activité et vos utilisateurs." },
-  { titre: "Mise en ligne", texte: "Une fois le projet finalisé et validé, le site est mis en ligne et prêt à vivre." },
-];
 ---
 
 <BaseLayout
-  title={`${siteConfig.name} - ${siteConfig.tagline}`}
+  title="Pauline Rébufat Créations Céramiques | Stages et expositions"
   description={siteConfig.description}
   canonical={siteConfig.url}
-  ogTitle={`${siteConfig.name} - ${siteConfig.tagline}`}
+  ogTitle="Pauline Rébufat Créations Céramiques | Stages et expositions"
   ogDescription={siteConfig.description}
-  schema={[
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Pauline Rébufat Créations Céramiques",
-      "url": "https://paulinerebufat.fr",
-      "telephone": "+33660828775",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Saint Père en Retz",
-        "addressRegion": "Pays de la Loire",
-        "addressCountry": "FR"
-      },
-      "description": siteConfig.description,
-      "areaServed": "Pays de Retz et rayon de 20km"
-    }
-  ]} 
+  schema={faqSchema}
+
 >
   <Hero
   titre="Pauline Rébufat créations céramiques"
   image={monImage}
-  imageAlt="Photo de créations céramiques"
+  imageAlt="Photo de fleurs en céramique"
   lienLabel="Je prends contact"
   lienHref={`${import.meta.env.BASE_URL}/contact`}
 >
@@ -287,7 +254,7 @@ J’aime que la matière reste visible.<br> J’aime aussi qu’une pièce racon
   lienLabel="Mon parcours de céramiste"
   lienHref={`${import.meta.env.BASE_URL}/apropos`}
   image={tonImage}
-  imageAlt="Atelier de céramique"
+  imageAlt="Créations en céramique : tasses, sucrier, assiette en arrière plan"
 >
   <p>
     Je cherche à créer un <strong>univers doux et poétique</strong>, où la simplicité devient une force. J’aime les lignes sobres, les couleurs naturelles, les matières franches et les objets qui donnent envie de ralentir un peu.
@@ -328,7 +295,7 @@ J’aime que la matière reste visible.<br> J’aime aussi qu’une pièce racon
   lienLabel="Réserver un stage"
   lienHref={`${import.meta.env.BASE_URL}/contact`}
   image={tonImagestage}
-  imageAlt="Atelier de céramique"
+  imageAlt="Gros plan sur des mains en train de malaxer de l'argile"
 >
   
   <ul>
@@ -357,7 +324,7 @@ J’aime que la matière reste visible.<br> J’aime aussi qu’une pièce racon
     lienTous="https://share.google/3bHz74gmC3pFYv9cS" 
     avis={[
     {
-      texte: "Nous avons participé à des stages de poterie avec Pauline à plusieurs reprises, en famille : une parenthèse vraiment chouette et hors du temps, où tout le monde peut à la fois bénéficier des bons conseils et de l'expérience de Pauline, mais aussi expérimenter, découvrir, manipuler la terre et, pour le plus grand plaisir de tous, essayer le tour ! Pauline est très pédagogue et aime prendre le temps de transmettre sa passion.Ces stages sont en plus l'occasion de découvrir son atelier et donnent envie de repartir avec quelques unes de ses créations artisanales !",
+      texte: "Nous avons participé à des stages de poterie avec Pauline à plusieurs reprises, en famille : une parenthèse vraiment chouette et hors du temps, où tout le monde peut à la fois bénéficier des bons conseils et de l'expérience de Pauline, mais aussi expérimenter, découvrir, manipuler la terre et, pour le plus grand plaisir de tous, essayer le tour ! Pauline est très pédagogue et aime prendre le temps de transmettre sa passion. Ces stages sont en plus l'occasion de découvrir son atelier et donnent envie de repartir avec quelques unes de ses créations artisanales !",
       auteur: "Audrey"
     },
     {
@@ -371,38 +338,8 @@ J’aime que la matière reste visible.<br> J’aime aussi qu’une pièce racon
   ]}
   />
     
-  <QuestionsFrequentes
-  questions={[
-    {
-      question: "Qu'est-ce que la céramique artisanale ?",
-      reponse: "La céramique artisanale désigne des pièces façonnées à la main, avec des gestes artisanaux et une vraie attention portée à la matière. Chaque création est unique ou réalisée en petite série, avec des formes, des textures et des finitions qui portent la trace du travail de l’artisan."
-    },
-    {
-      question: "Quelle est la différence entre argile, grès, faïence et porcelaine ?",
-      reponse: "L’argile est la matière de base utilisée en céramique. Selon sa composition et sa cuisson, elle peut donner différentes terres comme la faïence, le grès ou la porcelaine.La faïence est une terre plus tendre et plus poreuse, cuite à plus basse température. Le grès est plus dense, plus résistant et convient très bien à la vaisselle et aux pièces du quotidien. La porcelaine est une terre plus fine, plus blanche et plus délicate, souvent appréciée pour son aspect lumineux et raffiné. Chaque matière a ses qualités, et je les choisis selon l’effet recherché et l’usage de la pièce."
-    },
-    {
-      question: "Proposez-vous des stages de poterie dans le Pays de Retz ?",
-      reponse: "Oui, je propose des stages de poterie dans le Pays de Retz pour découvrir ou approfondir le travail de la terre. Ces stages permettent de s’initier au modelage, au tournage et à l’émaillage dans une approche simple, accessible et créative."
-    },
-    {
-      question: "Où voir vos créations céramiques ?",
-      reponse: "Vous pouvez découvrir mes créations céramiques dans mon atelier, ainsi que selon la saison dans certaines boutiques de créateurs et sur des marchés locaux. Je partage aussi régulièrement mon univers et mes pièces sur mes réseaux sociaux."
-    },
-    {
-      question: "Vendez-vous vos pièces en ligne ?",
-      reponse: "Une petite sélection de pièces sera proposée en ligne prochainement. Pour le moment, je privilégie la présentation de mon univers, les points de vente locaux et les échanges directs autour des créations."
-    },
-    {
-      question: "Travaillez-vous pour la décoration de table ou de jardin ?",
-      reponse: "Oui, je crée des pièces qui peuvent s’intégrer à la décoration de table comme à la décoration de jardin. Je réalise par exemple de la vaisselle artisanale, des objets décoratifs, des fleurs en porcelaine, des bassins pour les oiseaux ou encore des réserves d’eau pour les plantes."
-    }, 
-    {
-      question: "D’où viennent les terres et matériaux que vous utilisez ?",
-      reponse: "Je travaille principalement avec des terres céramiques choisies pour leur qualité, leur résistance et leur rendu après cuisson. Selon les pièces, j’utilise notamment du grès de St-Amand-en-Puisaye et de la terre de Provence.J’aime sélectionner des matières naturelles qui me permettent de créer des pièces durables, sensibles et faites main. Les émaux sont alimentaires et préparés à l’atelier, afin d’obtenir des effets uniques sur chaque création."
-    }
-  ]}
-/>
+   <QuestionsFrequentes questions={faq} />
+
 
  <Action 
   titre="Envie d'en savoir plus ?"

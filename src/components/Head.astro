@@ -2,78 +2,125 @@
 import { siteConfig } from '../config/site.ts';
 
 const {
-  title = `${siteConfig.name} - ${siteConfig.tagline}`,
-  description = "Description à remplir...",
+  title = siteConfig.name,
+  description = siteConfig.description,
   ogTitle = title,
   ogDescription = description,
   ogImage = siteConfig.defaultOgImage,
   canonical = siteConfig.url,
-  schema = null
+  schema = []
 } = Astro.props;
+
+const canonicalAbsolute = canonical.startsWith('http')
+  ? canonical
+  : `${siteConfig.url}${canonical}`;
 
 const ogImageAbsolute = ogImage.startsWith('http')
   ? ogImage
   : `${siteConfig.url}${ogImage}`;
 
-const businessData = {
+const pageSchemas = Array.isArray(schema) ? schema : schema ? [schema] : [];
+
+const websiteId = `${siteConfig.url}/#website`;
+const webpageId = `${canonicalAbsolute}#webpage`;
+const businessId = `${siteConfig.url}/#business`;
+const personId = `${siteConfig.url}/#pauline`;
+
+const structuredData = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": siteConfig.name,
-  "image": siteConfig.defaultOgImage,
-  "@id": `${siteConfig.url}/#business`,
-  "url": siteConfig.url,
-  "telephone": siteConfig.telephone,
-  "email": siteConfig.email,
-  "sameAs": [siteConfig.facebook],
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": siteConfig.adresse.rue,
-    "addressLocality": siteConfig.adresse.ville,
-    "postalCode": siteConfig.adresse.codePostal,
-    "addressCountry": siteConfig.adresse.pays
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": siteConfig.geo.latitude,
-    "longitude": siteConfig.geo.longitude
-  },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": siteConfig.horaires.jours,
-    "opens": siteConfig.horaires.ouverture,
-    "closes": siteConfig.horaires.fermeture
-  }
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": websiteId,
+      "url": siteConfig.url,
+      "name": siteConfig.name,
+      "description": siteConfig.description,
+      "inLanguage": "fr-FR"
+    },
+    {
+      "@type": "WebPage",
+      "@id": webpageId,
+      "url": canonicalAbsolute,
+      "name": title,
+      "description": description,
+      "isPartOf": {
+        "@id": websiteId
+      },
+      "about": {
+        "@id": businessId
+      },
+      "inLanguage": "fr-FR"
+    },
+    {
+      "@type": "Person",
+      "@id": personId,
+      "name": "Pauline Rébufat",
+      "url": siteConfig.url,
+      "email": siteConfig.email,
+      "telephone": siteConfig.telephone,
+      "sameAs": [siteConfig.facebook],
+      "jobTitle": "Céramiste",
+      "worksFor": {
+        "@id": businessId
+      }
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": businessId,
+      "name": siteConfig.name,
+      "image": ogImageAbsolute,
+      "url": siteConfig.url,
+      "telephone": siteConfig.telephone,
+      "email": siteConfig.email,
+      "sameAs": [siteConfig.facebook],
+      "description": siteConfig.description,
+      "address": {
+        "@type": "PostalAddress",
+        ...(siteConfig.adresse.rue ? { "streetAddress": siteConfig.adresse.rue } : {}),
+        "addressLocality": siteConfig.adresse.ville,
+        "postalCode": siteConfig.adresse.codePostal,
+        "addressCountry": siteConfig.adresse.pays
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": siteConfig.geo.latitude,
+        "longitude": siteConfig.geo.longitude
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": siteConfig.horaires.jours,
+          "opens": siteConfig.horaires.ouverture,
+          "closes": siteConfig.horaires.fermeture
+        }
+      ]
+    },
+    ...pageSchemas
+  ]
 };
 ---
 
-<!-- Base -->
 <meta charset="UTF-8" />
 <meta name="generator" content={Astro.generator} />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 <title>{title}</title>
 <meta name="description" content={description} />
-<link rel="canonical" href={canonical} />
- <link rel="sitemap" href={`${import.meta.env.BASE_URL}sitemap-index.xml`} />
- <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+<link rel="canonical" href={canonicalAbsolute} />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
 
-<!-- Open Graph -->
 <meta property="og:title" content={ogTitle} />
 <meta property="og:description" content={ogDescription} />
 <meta property="og:image" content={ogImageAbsolute} />
-<meta property="og:url" content={canonical} />
+<meta property="og:url" content={canonicalAbsolute} />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="fr_FR" />
 <meta property="og:site_name" content={siteConfig.name} />
 
-<!-- Favicons -->
 <link rel="icon" type="image/png" sizes="192x192" href={`${import.meta.env.BASE_URL}favicon-192x192.png`} />
 <link rel="icon" type="image/png" sizes="96x96" href={`${import.meta.env.BASE_URL}favicon-96x96.png`} />
 <link rel="apple-touch-icon" sizes="180x180" href={`${import.meta.env.BASE_URL}apple-touch-icon.png`} />
 <link rel="manifest" href={`${import.meta.env.BASE_URL}site.webmanifest`} />
 <meta name="theme-color" content={siteConfig.themeColor} />
 
-<!-- JSON-LD LocalBusiness -->
-<script type="application/ld+json" set:html={JSON.stringify(businessData)} />
-
-<!-- JSON-LD spécifique à la page (optionnel) -->
-{schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />

@@ -1,6 +1,4 @@
-@import '@fontsource/lexend/400.css';
-@import '@fontsource/lexend/500.css';
-@import '@fontsource/lexend/700.css';
+
 @import '@fontsource/great-vibes';  /* à enlever si on garde Tomatoes et nettoyer en général car doublon ??*/
 
 
@@ -125,25 +123,6 @@ a {
   margin: 0;
 }
 */
-.bouton-clair {
-  background-color: var(--color-bg1);
-  color: var(--color-text);
-  padding: 10px;
-  margin: 20px;
-  border-radius: 20px;
-  border: 2px solid #ffffff;
-  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-  display: inline-block;       /* Respecte largeur parent */
-  max-width: 100%;             /* Jamais plus large */
-  box-sizing: border-box;      /*  Inclut padding */
-}
-
-.bouton-clair:hover {
-  background-color: color-mix(in oklch, var(--color-bg1) 80%, black);
-  border-color: var(--color-text);
-  box-shadow: 0 4px 10px oklch(0 0 0 / 0.25);
-  transform: translateY(-2px);
-}
 
 
 .bouton-fonce {
@@ -221,7 +200,6 @@ a {
 
 a,
 button,
-.bouton-clair,
 .bouton-fonce {
   transition:
     color 0.2s ease,
@@ -235,7 +213,6 @@ button,
     max-width: 100%;
     
   }
-  .bouton-clair,
   .bouton-fonce {
     display: block;
     width: fit-content;
