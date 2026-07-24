@@ -26,6 +26,9 @@ const schema = [
     "about": {
       "@id": `${siteConfig.url}/#business`
     },
+    "mainEntity": {
+  "@id": `${siteConfig.url}/#business`
+    },
     "inLanguage": "fr-FR"
   },
   {
@@ -52,7 +55,7 @@ const schema = [
 <BaseLayout
   title="Contacter Pauline Rébufat Créations Céramiques"
   description="Contactez Pauline Rébufat, céramiste dans le Pays de Retz. Par téléphone, email ou formulaire. Réponse rapide à chaque message."
-  canonical={`${siteConfig.url}/contact`}
+  canonical="/contact"
   ogTitle={`Contacter ${siteConfig.name}`}
   ogDescription={`Contactez ${siteConfig.name} pour toute question sur Pauline Rébufat Créations Céramiques.`}
   schema={schema}
@@ -72,14 +75,14 @@ const schema = [
     <h2>Une question, ou l'envie d'en savoir plus ?</h2>
     <p>Vous cherchez une <strong>céramiste dans le Pays de Retz</strong>, une vaisselle artisanale en grès, une création décorative unique ou un stage de poterie ? Je serai heureuse d’échanger avec vous.</p>
    <div class="coordonnees">
-  <div>📞 06 60 82 87 75</div>
+  <a href="tel:+33660828775">📞 06 60 82 87 75</a>
   <div>📧 <a href="mailto:pauline.rebufat@gmail.com">pauline.rebufat@gmail.com</a></div>
   <a href="https://www.instagram.com/lesceramiquesdepauline/" target="_blank" rel="noopener noreferrer">
-    <img src={`${base}icons/instagram.svg`} alt="Instagram" width="22" height="22" />
+    <img src={`${base}icons/instagram.svg`} alt="" width="22" height="22" />
     Les céramiques de Pauline
   </a>
   <a href="https://www.facebook.com/CERAMIQUEPAULINEREBUFAT" target="_blank" rel="noopener noreferrer">
-    <img src={`${import.meta.env.BASE_URL}icons/facebook.svg`} alt="Facebook" width="22" height="22" />
+    <img src={`${import.meta.env.BASE_URL}icons/facebook.svg`} alt="" width="22" height="22" />
     Les Céramiques de Pauline
   </a>
 </div>

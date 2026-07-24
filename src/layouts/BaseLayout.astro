@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import BackToTop from '../components/BackToTop.astro';
 import '../styles/global.css';
+import 'aos/dist/aos.css';
 
 const {
   title,
@@ -98,24 +99,11 @@ const {
   }
 </script>
 
-    <script>
-      import "../scripts/menu.js";
-    </script>
+   
 
-    <script>
-      import AOS from 'aos';
-      import 'aos/dist/aos.css';
+    <script src="../scripts/aos.js"></script>
 
-      AOS.init({
-        duration: 800,
-        once: true,
-        offset: 0,
-      });
-
-      setTimeout(() => {
-        AOS.refresh();
-      }, 100);
-    </script>
+   
   </body>
 </html>
 

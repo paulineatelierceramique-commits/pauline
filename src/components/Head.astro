@@ -25,6 +25,8 @@ const websiteId = `${siteConfig.url}/#website`;
 const webpageId = `${canonicalAbsolute}#webpage`;
 const businessId = `${siteConfig.url}/#business`;
 const personId = `${siteConfig.url}/#pauline`;
+const sameAs = [siteConfig.facebook].filter(Boolean);
+
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -58,7 +60,7 @@ const structuredData = {
       "url": siteConfig.url,
       "email": siteConfig.email,
       "telephone": siteConfig.telephone,
-      "sameAs": [siteConfig.facebook],
+...   (sameAs.length ? { "sameAs": sameAs } : {}),
       "jobTitle": "Céramiste",
       "worksFor": {
         "@id": businessId
@@ -72,7 +74,7 @@ const structuredData = {
       "url": siteConfig.url,
       "telephone": siteConfig.telephone,
       "email": siteConfig.email,
-      "sameAs": [siteConfig.facebook],
+      ...(sameAs.length ? { "sameAs": sameAs } : {}),
       "description": siteConfig.description,
       "address": {
         "@type": "PostalAddress",
