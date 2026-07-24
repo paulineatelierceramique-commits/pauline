@@ -103,7 +103,6 @@ const {
 }
 
 .faq-answer {
-  display: none;
   padding: 0 1.25rem 1rem;
   color: var(--color-text);
 }
@@ -120,26 +119,28 @@ const {
   }
 }
     </style>
+    <script>
+  document.querySelectorAll('.faq-question').forEach((question) => {
+    question.addEventListener('click', () => {
+      const button = question.querySelector('.faq-question-btn');
+      const answer = question.nextElementSibling;
 
-<script>
-  const buttons = document.querySelectorAll('.faq-question-btn');
+      if (!(button instanceof HTMLButtonElement)) return;
+      if (!(answer instanceof HTMLElement)) return;
 
-  buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const answerId = button.getAttribute('aria-controls');
-      const answer = answerId ? document.getElementById(answerId) : null;
       const isExpanded = button.getAttribute('aria-expanded') === 'true';
 
-      buttons.forEach((btn) => {
-        const id = btn.getAttribute('aria-controls');
-        const panel = id ? document.getElementById(id) : null;
+      document.querySelectorAll('.faq-question-btn').forEach((btn) => {
         btn.setAttribute('aria-expanded', 'false');
-        if (panel) {
+      });
+
+      document.querySelectorAll('.faq-answer').forEach((panel) => {
+        if (panel instanceof HTMLElement) {
           panel.hidden = true;
         }
       });
 
-      if (!isExpanded && answer) {
+      if (!isExpanded) {
         button.setAttribute('aria-expanded', 'true');
         answer.hidden = false;
       }
