@@ -4,7 +4,6 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://paulineatelierceramique-commits.github.io',
-  base: '/pauline',
  
   integrations: [sitemap()],
 });
